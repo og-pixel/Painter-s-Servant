@@ -1,0 +1,20 @@
+[
+  {
+    "directory": "/media/og_pixel/SD/workspace/goblin-guide/build",
+    "command": "c++ -Igoblin_guide@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -Wextra -Wpedantic -g -MD -MQ 'goblin_guide@exe/src_main.cpp.o' -MF 'goblin_guide@exe/src_main.cpp.o.d' -o 'goblin_guide@exe/src_main.cpp.o' -c ../src/main.cpp",
+    "file": "../src/main.cpp",
+    "output": "goblin_guide@exe/src_main.cpp.o"
+  },
+  {
+    "directory": "/media/og_pixel/SD/workspace/goblin-guide/build",
+    "command": "c++ -Igoblin_guide@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -Wextra -Wpedantic -g -MD -MQ 'goblin_guide@exe/src_window_Window.cpp.o' -MF 'goblin_guide@exe/src_window_Window.cpp.o.d' -o 'goblin_guide@exe/src_window_Window.cpp.o' -c ../src/window/Window.cpp",
+    "file": "../src/window/Window.cpp",
+    "output": "goblin_guide@exe/src_window_Window.cpp.o"
+  },
+  {
+    "directory": "/media/og_pixel/SD/workspace/goblin-guide/build",
+    "command": "c++ -Igoblin_guide@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -Wextra -Wpedantic -g -MD -MQ 'goblin_guide@exe/src_window_MainWindow.cpp.o' -MF 'goblin_guide@exe/src_window_MainWindow.cpp.o.d' -o 'goblin_guide@exe/src_window_MainWindow.cpp.o' -c ../src/window/MainWindow.cpp",
+    "file": "../src/window/MainWindow.cpp",
+    "output": "goblin_guide@exe/src_window_MainWindow.cpp.o"
+  }
+]
