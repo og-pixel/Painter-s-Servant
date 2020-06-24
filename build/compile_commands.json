@@ -16,5 +16,11 @@
     "command": "c++ -Igoblin_guide@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -Wextra -Wpedantic -g -MD -MQ 'goblin_guide@exe/src_window_MainWindow.cpp.o' -MF 'goblin_guide@exe/src_window_MainWindow.cpp.o.d' -o 'goblin_guide@exe/src_window_MainWindow.cpp.o' -c ../src/window/MainWindow.cpp",
     "file": "../src/window/MainWindow.cpp",
     "output": "goblin_guide@exe/src_window_MainWindow.cpp.o"
+  },
+  {
+    "directory": "/media/og_pixel/SD/workspace/goblin-guide/build",
+    "command": "c++ -Igoblin_guide@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -Wextra -Wpedantic -g -MD -MQ 'goblin_guide@exe/src_Settings.cpp.o' -MF 'goblin_guide@exe/src_Settings.cpp.o.d' -o 'goblin_guide@exe/src_Settings.cpp.o' -c ../src/Settings.cpp",
+    "file": "../src/Settings.cpp",
+    "output": "goblin_guide@exe/src_Settings.cpp.o"
   }
 ]

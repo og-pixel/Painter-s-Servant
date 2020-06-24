@@ -1,4 +1,4 @@
-Build started at 2020-06-22T18:31:46.208934
+Build started at 2020-06-24T04:13:41.755645
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -8,7 +8,7 @@ Source dir: /media/og_pixel/SD/workspace/goblin-guide
 Build dir: /media/og_pixel/SD/workspace/goblin-guide/build
 Build type: native build
 Project name: goblin-guide
-Project version: 0.1
+Project version: 0.2
 C++ compiler for the build machine: c++ (gcc 9.3.0 "c++ (Ubuntu 9.3.0-10ubuntu2) 9.3.0")
 C++ linker for the build machine: c++ ld.bfd 2.34
 C++ compiler for the host machine: c++ (gcc 9.3.0 "c++ (Ubuntu 9.3.0-10ubuntu2) 9.3.0")
@@ -24,8 +24,8 @@ Build targets in project: 1
 
 Found ninja-1.10.0 at /usr/bin/ninja
 Running compile:
-Working directory:  /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmp7uvzky64
-Command line:  c++ /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmp7uvzky64/testfile.cpp -o /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmp7uvzky64/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
+Working directory:  /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmplhlg3dan
+Command line:  c++ /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmplhlg3dan/testfile.cpp -o /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmplhlg3dan/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
 
 Code:
  

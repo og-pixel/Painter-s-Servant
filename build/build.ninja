@@ -48,7 +48,11 @@ build goblin_guide@exe/src_window_MainWindow.cpp.o: cpp_COMPILER ../src/window/M
  DEPFILE = goblin_guide@exe/src_window_MainWindow.cpp.o.d
  ARGS = -Igoblin_guide@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -Wextra -Wpedantic -g
 
-build goblin_guide: cpp_LINKER goblin_guide@exe/src_main.cpp.o goblin_guide@exe/src_window_Window.cpp.o goblin_guide@exe/src_window_MainWindow.cpp.o | /usr/lib/x86_64-linux-gnu/libncurses.a /usr/lib/x86_64-linux-gnu/libncurses.so
+build goblin_guide@exe/src_Settings.cpp.o: cpp_COMPILER ../src/Settings.cpp
+ DEPFILE = goblin_guide@exe/src_Settings.cpp.o.d
+ ARGS = -Igoblin_guide@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -Wextra -Wpedantic -g
+
+build goblin_guide: cpp_LINKER goblin_guide@exe/src_main.cpp.o goblin_guide@exe/src_window_Window.cpp.o goblin_guide@exe/src_window_MainWindow.cpp.o goblin_guide@exe/src_Settings.cpp.o | /usr/lib/x86_64-linux-gnu/libncurses.a /usr/lib/x86_64-linux-gnu/libncurses.so
  LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group -lncurses -Wl,--end-group
 
 # Test rules
