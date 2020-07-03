@@ -16,3 +16,12 @@ Window::Window() {
 void Window::createWindow(){
   std::cout << "Called Home" << std::endl;
 }
+
+int Window::getHeight() {
+  return height;
+}
+
+int Window::getWidth() {
+  return width;
+  
+}

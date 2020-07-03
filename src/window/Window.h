@@ -14,7 +14,13 @@ public:
     virtual int getInput() = 0;
     virtual void closeWindow() = 0;
     virtual void createWindow() = 0;
+
+  int getWidth();
+  int getHeight();
+
 private:
+  int width = 0;
+  int height = 0;
 
 };
 

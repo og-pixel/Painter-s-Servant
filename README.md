@@ -1,6 +1,8 @@
-Software Name as Headline
+Goblin Guide - Ncurses Games Written in C++
 ======
-**Software Name** is a software for things. Short description here.
+**Project Goblin Guide** is a simple terminal application meant to be running a couple of simple games, such as
+  tetris, snake, space invaders etc. Project is built using mason and ninja and can be run from 
+  spacemacs (develop branch and c++ layers).
 
 #### Screenshot
 ![Screenshot software](http://url/screenshot-software.png "screenshot software")

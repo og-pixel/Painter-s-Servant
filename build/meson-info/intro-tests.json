@@ -1,1 +1,1 @@
-[{"cmd": ["/media/og_pixel/SD/workspace/goblin-guide/build/goblin_guide"], "env": {}, "name": "basic", "workdir": null, "timeout": 30, "suite": ["goblin-guide"], "is_parallel": true, "priority": 0, "protocol": "exitcode"}]
+[{"cmd": ["/media/og_pixel/SD/workspace/goblin-guide/build/goblin-guide-tests"], "env": {}, "name": "basic test", "workdir": null, "timeout": 30, "suite": ["goblin-guide"], "is_parallel": true, "priority": 0, "protocol": "exitcode"}]

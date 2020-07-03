@@ -1,4 +1,4 @@
-Build started at 2020-06-24T04:13:41.755645
+Build started at 2020-06-24T18:08:48.021927
 Main binary: /usr/bin/python3
 Build Options: -Dbackend=ninja
 Python system: Linux
@@ -19,13 +19,13 @@ Host machine cpu family: x86_64
 Host machine cpu: x86_64
 Target machine cpu family: x86_64
 Target machine cpu: x86_64
-Adding test "basic"
-Build targets in project: 1
+Adding test "basic test"
+Build targets in project: 2
 
 Found ninja-1.10.0 at /usr/bin/ninja
 Running compile:
-Working directory:  /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmplhlg3dan
-Command line:  c++ /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmplhlg3dan/testfile.cpp -o /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmplhlg3dan/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
+Working directory:  /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmpxta5nax8
+Command line:  c++ /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmpxta5nax8/testfile.cpp -o /media/og_pixel/SD/workspace/goblin-guide/build/meson-private/tmpxta5nax8/output.obj -pipe -c -D_FILE_OFFSET_BITS=64 -O0 -fpermissive --print-search-dirs 
 
 Code:
  

@@ -5,8 +5,9 @@
 #include "MainWindow.h"
 
 MainWindow::MainWindow() {
-  std::cout << gameList[0] << std::endl; 
-  std::cout << gameList[2] << std::endl; 
+  std::cout << gameList[0] << std::endl;
+  std::cout << gameList[2] << std::endl
+;
 }
 
 int MainWindow::getInput() {
