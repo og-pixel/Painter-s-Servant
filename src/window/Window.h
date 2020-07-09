@@ -9,15 +9,15 @@ public:
   Window();
   Window(int width, int height);
 
-  virtual void closeWindow() = 0;
-
+  //TODO Function meant to update a screen,
+  // but I am not sure if I will just use
+  // regular function provided
   void update();
 
   // Getters
   int getWidth();
   int getHeight();
   std::vector<WINDOW*> getWindowList();
-
   // Setters
 
 private:

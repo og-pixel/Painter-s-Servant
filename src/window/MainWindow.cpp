@@ -26,11 +26,3 @@ MainWindow::MainWindow() {
   endwin();
 }
 
-
-// void MainWindow::createWindow() {
-//   Window::createWindow();
-// }
-
-void MainWindow::closeWindow() {
-  
-}

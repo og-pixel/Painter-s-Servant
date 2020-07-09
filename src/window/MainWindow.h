@@ -7,8 +7,6 @@ class MainWindow: public Window {
 public:
   MainWindow();
 
-  void closeWindow() override;
-
 private:
   std::string gameList[3] = {"Tick Tack Toe", "Tetris", "Snake"};
   int gameChoice = 0;
