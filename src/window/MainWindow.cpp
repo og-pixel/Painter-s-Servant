@@ -5,20 +5,32 @@
 #include "MainWindow.h"
 
 MainWindow::MainWindow() {
-  std::cout << gameList[0] << std::endl;
-  std::cout << gameList[2] << std::endl
-;
+  initscr();
+  WINDOW* window1 = newwin(20, 20, 0, 0);
+  box(window1, 0, 0);
+
+  // addstr("Hello World\n");
+  mvwaddstr(window1, 1, 2,"Hello World");
+  mvwaddstr(window1, 2, 2,"Menu Bar");
+  mvwaddstr(window1, 3, 2,"Menu Bar");
+  refresh();
+  wrefresh(window1);
+  noecho();
+
+  //Quit when pressed 'q'
+  int input = getch();
+  while(input!='q'){
+    input = getch();
+  }
+
+  endwin();
 }
 
-int MainWindow::getInput() {
-    getch();
-    return 0;
-}
 
-void MainWindow::createWindow() {
-  Window::createWindow();
-}
+// void MainWindow::createWindow() {
+//   Window::createWindow();
+// }
 
 void MainWindow::closeWindow() {
-
+  
 }

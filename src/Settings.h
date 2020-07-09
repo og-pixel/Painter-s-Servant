@@ -6,7 +6,6 @@ class Settings {
 
 public:
   Settings();
-  static void testFunc();
 
 private:
 

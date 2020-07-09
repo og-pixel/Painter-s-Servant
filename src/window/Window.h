@@ -5,23 +5,26 @@
 class Window {
 
 public:
-    //All windows should be stored here
-    static std::vector<WINDOW*> windowList;
+  //Constructors
+  Window();
+  Window(int width, int height);
 
-    Window();
-    Window(int x);
+  virtual void closeWindow() = 0;
 
-    virtual int getInput() = 0;
-    virtual void closeWindow() = 0;
-    virtual void createWindow() = 0;
+  void update();
 
+  // Getters
   int getWidth();
   int getHeight();
+  std::vector<WINDOW*> getWindowList();
+
+  // Setters
 
 private:
+  //All windows should be stored here
+  static std::vector<WINDOW*> windowList;
   int width = 0;
   int height = 0;
-
 };
 
 #endif //GOBLINGUIDE_WINDOW_H

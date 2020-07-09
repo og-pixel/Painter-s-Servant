@@ -2,19 +2,27 @@
 
 std::vector<WINDOW*> Window::windowList;
 
-Window::Window() {
-    if(has_colors()){
-        std::cout << "This terminal does not support colours" << std::endl;
-    }
-    std::cout << "hello from main window" << std::endl;
-    WINDOW *newWindow = newwin(LINES, COLS, 0, 0);
-    Window::windowList.push_back(newWindow);
-    box(newWindow, 0, 0);
-    wrefresh(newWindow);
+// Main Constructor
+Window::Window(): Window(0,0) {
 }
 
-void Window::createWindow(){
-  std::cout << "Called Home" << std::endl;
+Window::Window(int width, int height) {
+  //TODO width and height might be wrong
+  WINDOW *newWindow = newwin(LINES, COLS, width, height);
+  Window::windowList.push_back(newWindow);
+  box(newWindow, 0, 0);
+
+  initscr();
+  wrefresh(newWindow);
+}
+
+
+void Window::update() {
+  refresh();
+}
+
+std::vector<WINDOW*> Window::getWindowList(){
+  return windowList;
 }
 
 int Window::getHeight() {
@@ -23,5 +31,5 @@ int Window::getHeight() {
 
 int Window::getWidth() {
   return width;
-  
 }
+
