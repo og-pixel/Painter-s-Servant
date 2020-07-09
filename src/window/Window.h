@@ -22,6 +22,7 @@ public:
 
 private:
   //All windows should be stored here
+  //TODO not used atm
   static std::vector<WINDOW*> windowList;
   int width = 0;
   int height = 0;

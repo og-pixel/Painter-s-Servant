@@ -8,8 +8,8 @@ public:
   MainWindow();
 
 private:
-  std::string gameList[3] = {"Tick Tack Toe", "Tetris", "Snake"};
-  int gameChoice = 0;
+  std::string menuList[3] = {"Tick Tack Toe", "Tetris", "Snake"};
+  int menuSelected = 0;
 };
 
 

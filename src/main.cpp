@@ -5,6 +5,7 @@
 
 
 int main() {
+  // Window* window = new MainWindow();
   Window* window = new MainWindow();
 
   return 0;
