@@ -7,8 +7,8 @@
 
 int main() {
   // Window* window = new MainWindow();
-  Window* tick = new TickTackToeWindow();
-  // Window* window = new MainWindow();
+  // Window* tick = new TickTackToeWindow();
+  Window* window = new MainWindow();
 
   return 0;
 }

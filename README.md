@@ -4,18 +4,19 @@ Goblin Guide - Ncurses Games Written in C++
   tetris, snake, space invaders etc. Project is built using mason and ninja and can be run from 
   spacemacs (develop branch and c++ layers).
 
+
 #### Screenshot
 ![Screenshot software](http://url/screenshot-software.png "screenshot software")
 
 ## Download
-* [Version X.Y](https://github.com/username/sw-name/archive/master.zip)
-* Other Versions
 
 ## Usage
-```$ git clone https://github.com/username/software-project.git
-...
-```
+Clone with: `git clone https://github.com/username/software-project.git`
+Build using: `meson build` and later `ninja -C "build"`
+Project creates two binaries, for execution and testing the project.
 ## Contributors
+This is a personal project purely for fun and learning the C++ without an IDE. 
+I am happy to receive contributions and code suggestions.
 
 ### Contributors on GitHub
 * [Contributors](https://github.com/username/sw-name/graphs/contributors)
@@ -27,19 +28,16 @@ Goblin Guide - Ncurses Games Written in C++
 * see [LIBRARIES](https://github.com/username/sw-name/blob/master/LIBRARIES.md) files
 
 ## License 
-* see [LICENSE](https://github.com/username/sw-name/blob/master/LICENSE.md) file
+* GPL3
 
 ## Version 
-* Version X.Y
+* Version 0.1
+Basic program draws a window and writes some text to it.
 
 ## How-to use this code
 * see [INSTRUCTIONS](https://github.com/username/sw-name/blob/master/INSTRUCTIONS.md) file
 
 ## Contact
 #### Developer/Company
-* Homepage: 
-* e-mail: 
-* Twitter: [@twitterhandle](https://twitter.com/twitterhandle "twitterhandle on twitter")
-* other communication/social media
-
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=username&url=https://github.com/username/sw-name&title=sw-name&language=&tags=github&category=software) 
+* Homepage: https://wwww.miloszjakubanis.com
+* e-mail: milosz.jakubanis@protonmail.com

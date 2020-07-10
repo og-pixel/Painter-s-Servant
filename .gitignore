@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/meson,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=meson,c++
 
@@ -187,5 +186,7 @@ fabric.properties
 # Cache file creation bug
 # See https://youtrack.jetbrains.com/issue/JBR-2257
 .idea/$CACHE_FILE$
+
+build/
 
 # End of https://www.toptal.com/developers/gitignore/api/meson,c++
