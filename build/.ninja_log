@@ -42,3 +42,16 @@
 2	390	1594308474896418815	goblin-guide@exe/src_window_MainWindow.cpp.o	ca9d03979cb61f97
 390	486	1594308474992418902	goblin-guide	63481e13a92d6ac5
 375	814	1594308475320419198	goblin-guide-tests	2c1e5739131a15a9
+5	1390	1594362652513941454	goblin-guide@exe/src_window_MainWindow.cpp.o	ca9d03979cb61f97
+1	1462	1594362652581941897	goblin-guide@exe/src_main.cpp.o	f9cfaaa71aebc0f9
+8	1539	1594362652665942444	goblin-guide-tests@exe/src_window_MainWindow.cpp.o	51ab0bc7a4061c46
+2	1704	1594362652829943513	goblin-guide@exe/src_window_Window.cpp.o	d3a68b6f2dd2fc96
+6	1770	1594362652893943930	goblin-guide-tests@exe/src_window_Window.cpp.o	ad1d816cefae3080
+1704	1883	1594362653005944660	goblin-guide	63481e13a92d6ac5
+19	20369	1594362671478066309	goblin-guide-tests@exe/tests_main.cpp.o	c8cba0d1ecf97941
+20369	21076	1594362672198066506	goblin-guide-tests	2c1e5739131a15a9
+2	639	1594364395773165589	goblin-guide@exe/src_main.cpp.o	f9cfaaa71aebc0f9
+2	580	1594364487309749131	goblin-guide@exe/src_main.cpp.o	f9cfaaa71aebc0f9
+2	589	1594364532166038273	goblin-guide@exe/src_main.cpp.o	f9cfaaa71aebc0f9
+1	572	1594364853241726862	goblin-guide@exe/src_main.cpp.o	f9cfaaa71aebc0f9
+2	561	1594364898444159269	goblin-guide@exe/src_main.cpp.o	f9cfaaa71aebc0f9
