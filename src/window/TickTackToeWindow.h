@@ -2,13 +2,12 @@
 #define GOBLINGUIDE_TICKTACKTOEWINDOW_H
 
 #include "../stdafx.h"
+#include "Window.h"
 class TickTackToeWindow: public Window {
 
 public:
   TickTackToeWindow();
-  //TODO It might be wrong order
-  // TickTackToeWindow(int width, int height);
-private:
+  TickTackToeWindow(int width, int height);
 
 };
 

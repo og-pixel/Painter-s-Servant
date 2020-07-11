@@ -5,10 +5,12 @@
 #include "TickTackToeWindow.h"
 
 // Main Constructor
-TickTackToeWindow::TickTackToeWindow() {
-  std::cout << "hello world" << std::endl;
+TickTackToeWindow::TickTackToeWindow(): TickTackToeWindow(0,0){
 }
 
+TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height) {
+  getch();
+}
 // TickTackToeWindow::TickTackToeWindow(int width, int height) {
   //TODO width and height might be wrong
   // WINDOW *newWindow = newwin(LINES, COLS, width, height);
