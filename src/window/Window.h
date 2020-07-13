@@ -13,6 +13,7 @@ public:
   // but I am not sure if I will just use
   // regular function provided
   void update();
+  bool isScreenSizeEnough();
 
   // Getters
   int getWidth();
