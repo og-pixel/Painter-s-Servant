@@ -9,11 +9,7 @@ public:
   Window();
   Window(int width, int height);
 
-  //TODO Function meant to update a screen,
-  // but I am not sure if I will just use
-  // regular function provided
-  void update();
-  bool isScreenSizeEnough();
+  bool checkSize();
 
   //All windows should be stored here
   //TODO not used atm

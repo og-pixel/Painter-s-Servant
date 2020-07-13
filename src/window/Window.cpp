@@ -15,9 +15,6 @@ Window::Window(int width, int height) {
   noecho();
 }
 
-void Window::update() {
-  refresh();
-}
 
 std::vector<WINDOW*> Window::getWindowList(){
   return windowList;
