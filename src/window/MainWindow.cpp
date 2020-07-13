@@ -4,6 +4,7 @@
 
 #include "MainWindow.h"
 
+//TODO this needs to me "removed" and most logic moved to the base class 
 MainWindow::MainWindow() {
   initscr();
   WINDOW* window1 = newwin(LINES, COLS, 0, 0);

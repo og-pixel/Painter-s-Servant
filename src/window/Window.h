@@ -15,6 +15,11 @@ public:
   void update();
   bool isScreenSizeEnough();
 
+  //All windows should be stored here
+  //TODO not used atm
+  static std::vector<WINDOW*> windowList;
+
+
   // Getters
   int getWidth();
   int getHeight();
@@ -22,10 +27,7 @@ public:
   // Setters
 
 private:
-  //All windows should be stored here
-  //TODO not used atm
-  static std::vector<WINDOW*> windowList;
-  int width = 0;
+   int width = 0;
   int height = 0;
 };
 
