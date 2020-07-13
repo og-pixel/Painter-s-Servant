@@ -8,7 +8,7 @@
 int main() {
   // Window* window = new MainWindow();
   TickTackToeWindow* tick = new TickTackToeWindow();
-  tick->choseField(1, 1, 1);
+  // tick->choseField(1, 1, 1);
 
   return 0;
 }

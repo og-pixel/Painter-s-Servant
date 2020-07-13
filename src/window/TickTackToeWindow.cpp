@@ -4,33 +4,36 @@
 #include "TickTackToeWindow.h"
 
 // Main Constructor
-TickTackToeWindow::TickTackToeWindow(): TickTackToeWindow(0,0){
+TickTackToeWindow::TickTackToeWindow(): TickTackToeWindow(10, 10){
 }
 
 TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height) {
+  //TODO this needs to actually know what
+  // to box
+  box(Window::windowList.at(0), 0, 0);
 
-  initscr();
-  // WINDOW* window1 = newwin(LINES, COLS, 0, 0);
-  box(windowList.at(0), 0, 0);
+  mvwaddstr(Window::windowList.at(0), 1, 2, "Line 1");
+  mvwaddstr(Window::windowList.at(0), 2, 2, "Line 2");
+  mvwaddstr(Window::windowList.at(0), 3, 2, "Line 3");
 
   refresh();
-  wrefresh(windowList.at(0));
-  noecho();
-
+  wrefresh(Window::windowList.at(0));
 
   getch();
+  endwin();
 }
 
 bool TickTackToeWindow::choseField(int x, int y, int player) {
   // if(board[y][x] == 0) board[y][x] = player;
   // else return false;
+  // checkConditions();
 
-  checkConditions();
-  mvwaddstr(windowList.at(0), 1, 2, "WTF");
-  mvwaddstr(windowList.at(0), 2, 2, "WTF");
-  mvwaddstr(windowList.at(0), 3, 2, "WTF");
+  mvwaddstr(Window::windowList.at(0), 1, 2, "WTF");
+  mvwaddstr(Window::windowList.at(0), 2, 2, "WTF");
+  mvwaddstr(Window::windowList.at(0), 3, 2, "WTF");
   refresh();
   wrefresh(windowList.at(0));
+
   return true;
 }
 
