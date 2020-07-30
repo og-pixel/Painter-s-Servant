@@ -6,7 +6,8 @@
 
 
 int main() {
-  Window* window = new MainWindow();
+  // Window* window = new MainWindow();
   TickTackToeWindow* tick = new TickTackToeWindow();
+
   return 0;
 }
