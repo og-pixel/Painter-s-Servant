@@ -7,11 +7,13 @@
 
 int main() {
   TickTackToeWindow* board = new TickTackToeWindow();
-  board->choseField(2, 2, 9);
+
+  board->chooseBoardField(0, 0, 9);
+  board->chooseBoardField(4, 4, 9);
+
   board->render();
   board->getInput();
   board->close();
-
 
   return 0;
 }

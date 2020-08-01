@@ -19,10 +19,10 @@ TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height
   endwin();
 }
 
-bool TickTackToeWindow::choseField(int x, int y, int player) {
-  // if(board[y][x] == 0) board[y][x] = player;
-  // else return false;
-  // checkConditions();
+bool TickTackToeWindow::chooseBoardField(int x, int y, int player) {
+  if(board[y][x] == 0) board[y][x] = player;
+  else return false;
+  checkConditions();
 
   // refresh();
   // wrefresh(windowList.at(0));
@@ -46,7 +46,7 @@ void TickTackToeWindow::render(){
 bool TickTackToeWindow::createBoard() {
   for(int i = 0; i < 5; i++) {
     for(int j = 0; j < 5; j++) {
-      mvwaddstr(windowList.at(0), i + 1, j + 1, std::to_string(board[j][i]).c_str());
+      mvwaddstr(windowList.at(0), i + 1, j + 1, std::to_string(board[i][j]).c_str());
     }
   }
 
@@ -54,3 +54,20 @@ bool TickTackToeWindow::createBoard() {
   wrefresh(windowList.at(0));
   return true;
 }
+
+bool TickTackToeWindow::playerMove(int x, int y) {
+  return chooseBoardField(x, y, 1);
+}
+
+bool TickTackToeWindow::computerMove() {
+  //TODO Computer decision here
+
+
+
+
+  return chooseBoardField(0, 0, 2);
+}
+
+
+
+

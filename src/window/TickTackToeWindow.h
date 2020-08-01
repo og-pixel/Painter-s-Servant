@@ -17,24 +17,25 @@ public:
   //1 Player
   //2 AI
   int board[5][5] = {
-                     { 0, 0, 1, 0, 0 },
-                     { 0, 0, 2, 0, 0 },
-                     { 1, 2, 3, 4, 5 },
-                     { 0, 0, 4, 0, 0 },
+                     { 0, 0, 0, 0, 0 },
+                     { 0, 0, 0, 0, 0 },
+                     { 0, 0, 0, 0, 0 },
+                     { 0, 0, 0, 0, 0 },
                      { 0, 0, 0, 0, 0 }
   };
 
-  //TODO silly name
-  bool choseField(int x, int y, int player);
+  bool chooseBoardField(int x, int y, int player);
   bool checkConditions();
   void render();
 
 private:
   //Variables
-  bool userTurn = false;
+  bool playerTurn = true;
 
   //Functions
   bool createBoard();
+  bool computerMove();
+  bool playerMove(int x, int y);
 };
 
 #endif //GOBLINGUIDE_TICKTACKTOEWINDOW_H
