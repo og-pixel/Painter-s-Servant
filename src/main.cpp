@@ -8,12 +8,16 @@
 int main() {
   TickTackToeWindow* board = new TickTackToeWindow();
 
-  board->chooseBoardField(0, 0, 9);
-  board->chooseBoardField(4, 4, 9);
 
-  board->render();
-  board->getInput();
+  for(int i = 0; i < 5; i++)
+    for(int j = 0; j < 5; j++){
+      board->chooseBoardField(j, i, 1);
+      board->render();
+      board->getInput();
+    }
+
+
+
   board->close();
-
   return 0;
 }

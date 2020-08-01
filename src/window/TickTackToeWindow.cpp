@@ -56,6 +56,8 @@ bool TickTackToeWindow::createBoard() {
 }
 
 bool TickTackToeWindow::playerMove(int x, int y) {
+
+
   return chooseBoardField(x, y, 1);
 }
 
