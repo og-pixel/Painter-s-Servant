@@ -12,21 +12,10 @@ TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height
   // to box
   box(windowList.at(0), 0, 0);
 
-  // mvwaddstr(windowList.at(0), 1, 2, "Line 1");
-  // mvwaddstr(windowList.at(0), 2, 2, "Line 2");
-  // mvwaddstr(windowList.at(0), 3, 2, "Line 3");
+  // refresh();
+  // wrefresh(windowList.at(0));
 
-  for(int i = 0; i < 5; i++) {
-    for(int j = 0; j < 5; j++) {
-      std::string xxx = std::to_string(board[j][i]);
-      mvwaddstr(windowList.at(0), i + 1, j + 1, std::to_string(board[j][i]).c_str());
-    }
-  }
-
-  refresh();
-  wrefresh(windowList.at(0));
-
-  getch();
+  // getch();
   endwin();
 }
 
@@ -35,11 +24,9 @@ bool TickTackToeWindow::choseField(int x, int y, int player) {
   // else return false;
   // checkConditions();
 
-  mvwaddstr(windowList.at(0), 1, 2, "WTF");
-  mvwaddstr(windowList.at(0), 2, 2, "WTF");
-  mvwaddstr(windowList.at(0), 3, 2, "WTF");
-  refresh();
-  wrefresh(windowList.at(0));
+  // refresh();
+  // wrefresh(windowList.at(0));
+
   return true;
 }
 
@@ -49,9 +36,21 @@ bool TickTackToeWindow::checkConditions() {
       // std::cout << board[j][i] << ",";
     }
   }
+  return true;
+}
+
+void TickTackToeWindow::render(){
+  createBoard();
 }
 
 bool TickTackToeWindow::createBoard() {
+  for(int i = 0; i < 5; i++) {
+    for(int j = 0; j < 5; j++) {
+      mvwaddstr(windowList.at(0), i + 1, j + 1, std::to_string(board[j][i]).c_str());
+    }
+  }
 
+  refresh();
+  wrefresh(windowList.at(0));
   return true;
 }

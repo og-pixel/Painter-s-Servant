@@ -15,6 +15,9 @@ public:
   //TODO not used atm
   static std::vector<WINDOW*> windowList;
 
+  //Functions
+  char getInput();
+  void close();
 
   // Getters
   int getWidth();

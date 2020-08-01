@@ -31,3 +31,12 @@ int Window::getWidth() {
 bool Window::checkSize() {
   return true;
 }
+
+char Window::getInput() {
+  //TODO this approach is probably very wrong
+  return getch();
+}
+
+void Window::close() {
+  endwin();
+}

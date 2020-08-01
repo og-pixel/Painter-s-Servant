@@ -6,8 +6,12 @@
 
 
 int main() {
-  // Window* window = new MainWindow();
-  TickTackToeWindow* tick = new TickTackToeWindow();
+  TickTackToeWindow* board = new TickTackToeWindow();
+  board->choseField(2, 2, 9);
+  board->render();
+  board->getInput();
+  board->close();
+
 
   return 0;
 }
