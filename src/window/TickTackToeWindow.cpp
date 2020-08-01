@@ -19,7 +19,7 @@ TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height
   for(int i = 0; i < 5; i++) {
     for(int j = 0; j < 5; j++) {
       std::string xxx = std::to_string(board[j][i]);
-      mvwaddstr(windowList.at(0), i, j, std::to_string(board[j][i]).c_str());
+      mvwaddstr(windowList.at(0), i + 1, j + 1, std::to_string(board[j][i]).c_str());
     }
   }
 
@@ -49,4 +49,9 @@ bool TickTackToeWindow::checkConditions() {
       // std::cout << board[j][i] << ",";
     }
   }
+}
+
+bool TickTackToeWindow::createBoard() {
+
+  return true;
 }

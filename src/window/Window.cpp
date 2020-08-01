@@ -28,3 +28,6 @@ int Window::getWidth() {
   return width;
 }
 
+bool Window::checkSize() {
+  return true;
+}

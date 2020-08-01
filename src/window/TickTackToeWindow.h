@@ -30,6 +30,8 @@ public:
 private:
   bool humanTurn = false;
 
+  bool createBoard();
+
 
 };
 
