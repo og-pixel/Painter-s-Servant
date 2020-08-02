@@ -27,10 +27,14 @@ public:
   bool chooseBoardField(int x, int y, int player);
   bool checkConditions();
   void render();
+  void navigation();
 
 private:
   //Variables
   bool playerTurn = true;
+
+  int xPos = 0;
+  int yPos = 0;
 
   //Functions
   bool createBoard();

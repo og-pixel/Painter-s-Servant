@@ -8,6 +8,8 @@
 int main() {
   TickTackToeWindow* board = new TickTackToeWindow();
 
+  board->navigation();
+
 
   for(int i = 0; i < 5; i++)
     for(int j = 0; j < 5; j++){
@@ -15,8 +17,6 @@ int main() {
       board->render();
       board->getInput();
     }
-
-
 
   board->close();
   return 0;

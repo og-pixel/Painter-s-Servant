@@ -12,7 +12,9 @@ Window::Window(int width, int height) {
   WINDOW *newWindow = newwin(LINES, COLS, 0, 0);
   Window::windowList.push_back(newWindow);
 
+  keypad(stdscr, TRUE);
   noecho();
+  std::cout << "called main constructor" << std::endl;
 }
 
 
@@ -33,7 +35,6 @@ bool Window::checkSize() {
 }
 
 char Window::getInput() {
-  //TODO this approach is probably very wrong
   return getch();
 }
 
