@@ -6,8 +6,12 @@
 
 
 int main() {
-  TickTackToeWindow* board = new TickTackToeWindow();
+  //TODO This is meant to be run at least once
+  initscr();
+  keypad(stdscr, true);
+  noecho();
 
+  TickTackToeWindow* board = new TickTackToeWindow();
   board->navigation();
 
 

@@ -8,11 +8,6 @@ Window::Window(): Window(10, 10) {}
 
 
 Window::Window(int width, int height) {
-  //TODO this should be done by all boxes anyway
-  // initscr();
-  // keypad(stdscr, true);
-  // noecho();
-
   WINDOW *newWindow = newwin(LINES, COLS, 0, 0);
   Window::windowList.push_back(newWindow);
 }
