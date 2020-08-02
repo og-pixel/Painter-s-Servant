@@ -69,7 +69,6 @@ void TickTackToeWindow::navigation() {
     }
     wmove(windowList.at(0), yPos, xPos);
     character = getch();
-    // std::cout << xPos << " " << yPos << std::endl;
   } while(character != 10);
 }
 
