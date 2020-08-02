@@ -14,9 +14,9 @@ int main() {
   initMainScreen();
 
   //TODO This is meant to be run at least once
-  MainWindow* board = new MainWindow();
-  // TickTackToeWindow* board = new TickTackToeWindow();
-  // board->navigation();
+  // MainWindow* board = new MainWindow();
+  TickTackToeWindow* board = new TickTackToeWindow();
+  board->navigation();
 
   // for(int i = 0; i < 5; i++)
   //   for(int j = 0; j < 5; j++){
