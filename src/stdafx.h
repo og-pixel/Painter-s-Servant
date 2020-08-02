@@ -6,6 +6,7 @@
 #define GOBLINGUIDE_STDAFX_H
 
 #include <string>
+#include <unordered_map>
 #include <cstdio>
 #include <iostream>
 #include <ncurses.h>

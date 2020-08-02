@@ -37,3 +37,11 @@ MainWindow::MainWindow() {
 
   endwin();
 }
+
+Window::~Window(){
+  
+}
+
+void MainWindow::testFunction() {
+  
+}

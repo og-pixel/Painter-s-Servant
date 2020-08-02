@@ -9,6 +9,8 @@ public:
   Window();
   Window(int width, int height);
 
+  ~Window();
+
   bool checkSize();
 
   //All windows should be stored here

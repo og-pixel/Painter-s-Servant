@@ -6,6 +6,7 @@ class MainWindow: public Window {
 
 public:
   MainWindow();
+  void testFunction();
 
 private:
   std::string menuList[3] = {"Tick Tack Toe", "Tetris", "Snake"};
