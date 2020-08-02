@@ -12,12 +12,12 @@ TEST_CASE("Create two windows and see if they are stored correctly in the static
 
   //TODO I am starting to understand my project and
   // the language. I might start writing some tests
+
   //TODO Remember about operator overloading "=="
   // so I can make a comparison
 
   Window* mainWindow = new MainWindow();
   Window* tickTackToe = new MainWindow();
-
 
 
   REQUIRE_FALSE(Window::windowList.at(0) == Window::windowList.at(1));

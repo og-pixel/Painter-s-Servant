@@ -4,18 +4,19 @@
 #include "window/MainWindow.h"
 #include "window/TickTackToeWindow.h"
 
-
-int main() {
-  //TODO This is meant to be run at least once
+void initMainScreen() {
   initscr();
   keypad(stdscr, true);
   noecho();
+}
 
-  TickTackToeWindow* board = new TickTackToeWindow();
-  board->navigation();
+int main() {
+  initMainScreen();
 
-  std::unordered_map<std::string, Window*> mymap;
-
+  //TODO This is meant to be run at least once
+  MainWindow* board = new MainWindow();
+  // TickTackToeWindow* board = new TickTackToeWindow();
+  // board->navigation();
 
   // for(int i = 0; i < 5; i++)
   //   for(int j = 0; j < 5; j++){

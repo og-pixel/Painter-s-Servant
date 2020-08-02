@@ -6,7 +6,7 @@
 
 //TODO this needs to me "removed" and most logic moved to the base class 
 MainWindow::MainWindow() {
-  initscr();
+  // initscr();
   WINDOW* window1 = newwin(LINES, COLS, 0, 0);
   box(window1, 0, 0);
 
@@ -17,7 +17,7 @@ MainWindow::MainWindow() {
 
   refresh();
   wrefresh(window1);
-  noecho();
+  // noecho();
   //Quit when pressed 'q'
   int input;
   do{
@@ -35,13 +35,11 @@ MainWindow::MainWindow() {
     wrefresh(window1);
   } while(input!='q');
 
-  endwin();
+  // endwin();
 }
 
 Window::~Window(){
-  
 }
 
 void MainWindow::testFunction() {
-  
 }

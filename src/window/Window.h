@@ -16,6 +16,7 @@ public:
   //All windows should be stored here
   //TODO not used atm
   static std::vector<WINDOW*> windowList;
+  static std::unordered_map<std::string, Window*> mymap;
 
   //Functions
   char getInput();
