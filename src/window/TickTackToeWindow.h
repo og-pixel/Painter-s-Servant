@@ -29,6 +29,8 @@ public:
   void render();
   void navigation();
 
+  void testFunction() override;
+
 private:
   //Variables
   bool playerTurn = true;

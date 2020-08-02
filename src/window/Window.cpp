@@ -4,17 +4,17 @@ std::vector<WINDOW*> Window::windowList;
 
 // Main Constructor, it should be used by all other windows
 // as it does initialized ncurses screens and boxes.
-Window::Window(): Window(10, 10){}
+Window::Window(): Window(10, 10) {}
 
 
 Window::Window(int width, int height) {
-  initscr();
+  //TODO this should be done by all boxes anyway
+  // initscr();
+  // keypad(stdscr, true);
+  // noecho();
+
   WINDOW *newWindow = newwin(LINES, COLS, 0, 0);
   Window::windowList.push_back(newWindow);
-
-  keypad(stdscr, TRUE);
-  noecho();
-  std::cout << "called main constructor" << std::endl;
 }
 
 

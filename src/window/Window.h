@@ -18,6 +18,7 @@ public:
   //Functions
   char getInput();
   void close();
+  virtual void testFunction() = 0;
 
   // Getters
   int getWidth();

@@ -12,10 +12,8 @@ TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height
   // to box
   box(windowList.at(0), 0, 0);
 
-  // refresh();
-  // wrefresh(windowList.at(0));
-  // getch();
-  endwin();
+  keypad(windowList.at(0), true);
+  std::cout << "tick constructor" << std::endl;
 }
 
 bool TickTackToeWindow::chooseBoardField(int x, int y, int player) {
@@ -70,7 +68,6 @@ void TickTackToeWindow::navigation() {
       break;
     }
     wmove(windowList.at(0), yPos, xPos);
-
     character = getch();
     std::cout << xPos << " " << yPos << std::endl;
   } while(character != 10);
@@ -86,5 +83,9 @@ bool TickTackToeWindow::computerMove() {
 }
 
 
+void TickTackToeWindow::testFunction() {
+
+
+}
 
 
