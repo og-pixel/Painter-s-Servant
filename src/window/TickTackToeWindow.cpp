@@ -55,19 +55,23 @@ void TickTackToeWindow::navigation() {
   do {
     switch(character) {
     case KEY_LEFT:
-      xPos--;
+      if((xPos - 1) > 0) xPos--;
       break;
     case KEY_RIGHT:
-      xPos++;
+      if((xPos + 2) < COLS) xPos++;
+      // xPos++;
       break;
     case KEY_UP:
-      yPos--;
+      if((yPos - 1) > 0) yPos--;
       break;
     case KEY_DOWN:
-      yPos++;
+      if((yPos + 2) < LINES) yPos++;
+      // yPos++;
       break;
     case KEY_RESIZE:
-      mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
+      // box(windowList.at(0), 0, 0);
+      // mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
+      wresize(windowList.at(0), 20, 20);
       break;
     }
     wmove(windowList.at(0), yPos, xPos);
@@ -79,6 +83,14 @@ void TickTackToeWindow::navigation() {
 
 bool TickTackToeWindow::playerMove(int x, int y) {
   return chooseBoardField(x, y, 1);
+}
+
+bool TickTackToeWindow::isTerminalSizeSufficient() {
+  if((COLS >= gameWidth) &&
+     LINES >= gameHeight) {
+    return true;
+  } else return false;
+  // return true;
 }
 
 bool TickTackToeWindow::computerMove() {

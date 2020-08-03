@@ -35,13 +35,17 @@ private:
   //Variables
   bool playerTurn = true;
 
-  int xPos = 0;
-  int yPos = 0;
+  int xPos = 2;
+  int yPos = 2;
+
+  int gameWidth = 30;
+  int gameHeight = 30;
 
   //Functions
   bool createBoard();
   bool computerMove();
   bool playerMove(int x, int y);
+  bool isTerminalSizeSufficient();
 };
 
 #endif //GOBLINGUIDE_TICKTACKTOEWINDOW_H
