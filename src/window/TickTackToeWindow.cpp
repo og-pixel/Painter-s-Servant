@@ -51,7 +51,7 @@ void TickTackToeWindow::navigation() {
   wrefresh(windowList.at(0));
   keypad(windowList.at(0), true);
 
-  char character = getch();
+  int character = getch();
   do {
     switch(character) {
     case KEY_LEFT:
@@ -66,11 +66,14 @@ void TickTackToeWindow::navigation() {
     case KEY_DOWN:
       yPos++;
       break;
+    case KEY_RESIZE:
+      mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
+      break;
     }
     wmove(windowList.at(0), yPos, xPos);
-    character = getch();
     refresh();
     wrefresh(windowList.at(0));
+    character = getch();
   } while(character != 10);
 }
 
