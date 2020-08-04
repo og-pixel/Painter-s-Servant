@@ -12,6 +12,7 @@ TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height
   // to box
   // WINDOW* window1 = newwin(LINES, COLS,0,0)
   // box(windowList.at(0), 0, 0);
+  if(!isTerminalSizeSufficient()) std::exit(1);
 }
 
 bool TickTackToeWindow::chooseBoardField(int x, int y, int player) {
@@ -47,6 +48,7 @@ bool TickTackToeWindow::createBoard() {
 }
 
 void TickTackToeWindow::navigation() {
+  wmove(windowList.at(0), yPos, xPos);
   refresh();
   wrefresh(windowList.at(0));
   keypad(windowList.at(0), true);
@@ -59,14 +61,12 @@ void TickTackToeWindow::navigation() {
       break;
     case KEY_RIGHT:
       if((xPos + 2) < COLS) xPos++;
-      // xPos++;
       break;
     case KEY_UP:
       if((yPos - 1) > 0) yPos--;
       break;
     case KEY_DOWN:
       if((yPos + 2) < LINES) yPos++;
-      // yPos++;
       break;
     case KEY_RESIZE:
       // box(windowList.at(0), 0, 0);
