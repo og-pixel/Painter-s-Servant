@@ -2,7 +2,7 @@
 #include "Settings.h"
 #include "window/Window.h"
 #include "window/MainWindow.h"
-#include "window/TickTackToeWindow.h"
+#include "window/TickGame.h"
 
 void initMainScreen() {
   initscr();
@@ -15,15 +15,15 @@ int main() {
 
   //TODO This is meant to be run at least once
   // MainWindow* board = new MainWindow();
-  TickTackToeWindow* board = new TickTackToeWindow();
-  board->navigation();
+  TickGame* board = new TickGame();
+  // board->navigation();
 
-  // for(int i = 0; i < 5; i++)
-  //   for(int j = 0; j < 5; j++){
-  //     board->chooseBoardField(j, i, 1);
-  //     board->render();
-  //     board->getInput();
-  //   }
+  for(int i = 0; i < 5; i++)
+    for(int j = 0; j < 5; j++){
+      board->chooseBoardField(j, i, 1);
+      board->render();
+      board->getInput();
+    }
 
   board->close();
   return 0;

@@ -1,13 +1,13 @@
 //
 // Created by og_pixel 
 //
-#include "TickTackToeWindow.h"
+#include "TickGame.h"
 
 // Main Constructor
-TickTackToeWindow::TickTackToeWindow(): TickTackToeWindow(10, 10){
+TickGame::TickGame(): TickGame(10, 10){
 }
 
-TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height) {
+TickGame::TickGame(int width, int height):Window(width, height) {
   //TODO this needs to actually know what
   // to box
   // WINDOW* window1 = newwin(LINES, COLS,0,0)
@@ -15,7 +15,7 @@ TickTackToeWindow::TickTackToeWindow(int width, int height):Window(width, height
   if(!isTerminalSizeSufficient()) std::exit(1);
 }
 
-bool TickTackToeWindow::chooseBoardField(int x, int y, int player) {
+bool TickGame::chooseBoardField(int x, int y, int player) {
   if(board[y][x] == 0) board[y][x] = player;
   else return false;
   checkConditions();
@@ -23,7 +23,7 @@ bool TickTackToeWindow::chooseBoardField(int x, int y, int player) {
   return true;
 }
 
-bool TickTackToeWindow::checkConditions() {
+bool TickGame::checkConditions() {
   for(int i = 0; i < 5; i++) {
     for(int j = 0; j < 5; j++) {
       // std::cout << board[j][i] << ",";
@@ -32,11 +32,11 @@ bool TickTackToeWindow::checkConditions() {
   return true;
 }
 
-void TickTackToeWindow::render(){
+void TickGame::render(){
   createBoard();
 }
 
-bool TickTackToeWindow::createBoard() {
+bool TickGame::createBoard() {
   for(int i = 0; i < 5; i++) {
     for(int j = 0; j < 5; j++) {
       mvwaddstr(windowList.at(0), i + 1, j + 1, std::to_string(board[i][j]).c_str());
@@ -47,7 +47,7 @@ bool TickTackToeWindow::createBoard() {
   return true;
 }
 
-void TickTackToeWindow::navigation() {
+void TickGame::navigation() {
   wmove(windowList.at(0), yPos, xPos);
   refresh();
   wrefresh(windowList.at(0));
@@ -81,11 +81,11 @@ void TickTackToeWindow::navigation() {
   } while(character != 10);
 }
 
-bool TickTackToeWindow::playerMove(int x, int y) {
+bool TickGame::playerMove(int x, int y) {
   return chooseBoardField(x, y, 1);
 }
 
-bool TickTackToeWindow::isTerminalSizeSufficient() {
+bool TickGame::isTerminalSizeSufficient() {
   if((COLS >= gameWidth) &&
      LINES >= gameHeight) {
     return true;
@@ -93,13 +93,13 @@ bool TickTackToeWindow::isTerminalSizeSufficient() {
   // return true;
 }
 
-bool TickTackToeWindow::computerMove() {
+bool TickGame::computerMove() {
   //TODO Computer decision here
   return chooseBoardField(0, 0, 2);
 }
 
 
-void TickTackToeWindow::testFunction() {
+void TickGame::testFunction() {
 
 
 }

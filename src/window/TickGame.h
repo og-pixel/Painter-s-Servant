@@ -6,12 +6,12 @@
 
 //The most basic form of the game, not even considering special
 // cases or anything like that.
-class TickTackToeWindow: public Window {
+class TickGame: public Window {
 
 public:
   //Constructor
-  TickTackToeWindow();
-  TickTackToeWindow(int width, int height);
+  TickGame();
+  TickGame(int width, int height);
 
   //0 Empty
   //1 Player
