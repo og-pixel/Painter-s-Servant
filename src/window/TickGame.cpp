@@ -32,19 +32,19 @@ bool TickGame::checkConditions() {
   return true;
 }
 
-void TickGame::render(){
-  createBoard();
-}
-
 bool TickGame::createBoard() {
-  for(int i = 0; i < 5; i++) {
-    for(int j = 0; j < 5; j++) {
-      mvwaddstr(windowList.at(0), i + 1, j + 1, std::to_string(board[i][j]).c_str());
+  for(int i = 0; i < gameHeight; i++) {
+    for(int j = 0; j < gameWidth; j++) {
+      mvwaddstr(windowList.at(0), i +(LINES/2) - (gameHeight/2), j +(COLS/2) - (gameWidth/2), std::to_string(board[i][j]).c_str());
     }
   }
   refresh();
   wrefresh(windowList.at(0));
   return true;
+}
+
+void TickGame::render() {
+  createBoard();
 }
 
 void TickGame::navigation() {
@@ -54,7 +54,7 @@ void TickGame::navigation() {
   keypad(windowList.at(0), true);
 
   int character = getch();
-  do {
+  // do {
     switch(character) {
     case KEY_LEFT:
       if((xPos - 1) > 0) xPos--;
@@ -68,6 +68,12 @@ void TickGame::navigation() {
     case KEY_DOWN:
       if((yPos + 2) < LINES) yPos++;
       break;
+    case 'j':
+      playerMove(xPos, yPos);
+      computerMove();
+      break;
+    case 'k':
+      break;
     case KEY_RESIZE:
       // box(windowList.at(0), 0, 0);
       // mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
@@ -77,8 +83,8 @@ void TickGame::navigation() {
     wmove(windowList.at(0), yPos, xPos);
     refresh();
     wrefresh(windowList.at(0));
-    character = getch();
-  } while(character != 10);
+    // character = getch();
+  // } while(character != 10);
 }
 
 bool TickGame::playerMove(int x, int y) {
@@ -95,7 +101,7 @@ bool TickGame::isTerminalSizeSufficient() {
 
 bool TickGame::computerMove() {
   //TODO Computer decision here
-  return chooseBoardField(0, 0, 2);
+  return chooseBoardField(7, 3, 2);
 }
 
 
@@ -104,4 +110,15 @@ void TickGame::testFunction() {
 
 }
 
+bool TickGame::isRunning() {
+  return true;
+}
+
+bool TickGame::startGame(){
+  while(isRunning()) {
+    render();
+    navigation();
+  }
+  return true;
+}
 

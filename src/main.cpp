@@ -17,14 +17,7 @@ int main() {
   // MainWindow* board = new MainWindow();
   TickGame* board = new TickGame();
   // board->navigation();
-
-  for(int i = 0; i < 5; i++)
-    for(int j = 0; j < 5; j++){
-      board->chooseBoardField(j, i, 1);
-      board->render();
-      board->getInput();
-    }
-
+  board->startGame();
   board->close();
   return 0;
 }
