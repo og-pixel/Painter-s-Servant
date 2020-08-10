@@ -1,6 +1,7 @@
 #include "Window.h"
 
 std::vector<WINDOW*> Window::windowList;
+WINDOW* Window::mainWindow = nullptr;
 
 // Main Constructor, it should be used by all other windows
 // as it does initialized ncurses screens and boxes.
@@ -8,10 +9,9 @@ Window::Window(): Window(10, 10) {}
 
 
 Window::Window(int width, int height) {
-  if(mainWindow) std::cout << "main window exists"
-                           << std::endl;
-
-
+  //TODO work on this bit
+  // it needs to create a main window and store it
+  if(!mainWindow) Window::mainWindow = newwin(0, 0, 0, 0);
 
   WINDOW *newWindow = newwin(LINES, COLS, 0, 0);
   box(newWindow, 0, 0);

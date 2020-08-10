@@ -20,7 +20,7 @@ public:
 
   //TODO this is meant to be a main window that the game will be at
   // initialised once at the start and later maintained.
-  WINDOW* mainWindow = nullptr;
+  static WINDOW* mainWindow;
 
   //Functions
   char getInput();
@@ -38,6 +38,10 @@ public:
 private:
   int width = 0;
   int height = 0;
+
+  //Name used by the window, used as a key
+  // in the hash map (unordered list)
+  std::string windowName;
 
   //TODO possibly a function for first time start
 };
