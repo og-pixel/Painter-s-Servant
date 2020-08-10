@@ -16,7 +16,11 @@ public:
   //All windows should be stored here
   //TODO not used atm
   static std::vector<WINDOW*> windowList;
-  static std::unordered_map<std::string, Window*> mymap;
+  static std::unordered_map<std::string, WINDOW*> mymap;
+
+  //TODO this is meant to be a main window that the game will be at
+  // initialised once at the start and later maintained.
+  WINDOW* mainWindow = nullptr;
 
   //Functions
   char getInput();

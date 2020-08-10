@@ -8,6 +8,11 @@ Window::Window(): Window(10, 10) {}
 
 
 Window::Window(int width, int height) {
+  if(mainWindow) std::cout << "main window exists"
+                           << std::endl;
+
+
+
   WINDOW *newWindow = newwin(LINES, COLS, 0, 0);
   box(newWindow, 0, 0);
   Window::windowList.push_back(newWindow);
