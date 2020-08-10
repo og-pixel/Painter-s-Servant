@@ -18,16 +18,20 @@ TickGame::TickGame(int width, int height):Window(width, height) {
   gameHeight = height;
 
   //TODO this part ensure new matrix has correct size
-  matrix.resize(gameHeight);
+  board.resize(gameHeight);
   for(int i = 0; i < gameHeight; i++) {
-    matrix[i].resize(gameWidth);
+    board[i].resize(gameWidth);
   }
 
   if(!isTerminalSizeSufficient()) std::exit(1);
 }
 
 bool TickGame::chooseBoardField(int x, int y, int player) {
-  if(matrix[y][x] == 0) matrix[y][x] = player;
+  //TODO this is another sanity check for the time being
+  if(x > gameWidth || y > gameHeight) return false;
+
+
+  if(board[y][x] == 0) board[y][x] = player;
   else return false;
   checkConditions();
 
@@ -46,7 +50,7 @@ bool TickGame::checkConditions() {
 bool TickGame::createBoard() {
   for(int i = 0; i < gameHeight; i++) {
     for(int j = 0; j < gameWidth; j++) {
-      mvwaddstr(windowList.at(0), i + (LINES/2) - (gameHeight/2), j + (COLS/2) - (gameWidth/2), std::to_string(matrix[i][j]).c_str());
+      mvwaddstr(windowList.at(0), i + (LINES/2) - (gameHeight/2), j + (COLS/2) - (gameWidth/2), std::to_string(board[i][j]).c_str());
     }
   }
   refresh();
@@ -117,7 +121,7 @@ bool TickGame::isTerminalSizeSufficient() {
 
 bool TickGame::computerMove() {
   //TODO Computer decision here
-  return chooseBoardField(7, 3, 2);
+  return chooseBoardField(0, 0, 2);
 }
 
 
@@ -131,6 +135,11 @@ bool TickGame::isRunning() {
 }
 
 bool TickGame::startGame(){
+  WINDOW* win = newwin(gameWidth + 1, gameHeight + 1, 2, 2);
+  box(win, 0, 0);
+  refresh();
+  wrefresh(win);
+
   while(isRunning()) {
     render();
     navigation();

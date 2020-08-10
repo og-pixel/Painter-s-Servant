@@ -13,8 +13,6 @@ void initMainScreen() {
 int main() {
   initMainScreen();
 
-  //TODO This is meant to be run at least once
-  // MainWindow* board = new MainWindow();
   TickGame* board = new TickGame(5, 3);
   board->startGame();
   board->close();
