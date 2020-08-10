@@ -16,7 +16,6 @@ int main() {
   //TODO This is meant to be run at least once
   // MainWindow* board = new MainWindow();
   TickGame* board = new TickGame(10, 10);
-  board->navigation();
   board->startGame();
   board->close();
   return 0;
