@@ -32,6 +32,8 @@ public:
 private:
   int width = 0;
   int height = 0;
+
+  //TODO possibly a function for first time start
 };
 
 #endif //GOBLINGUIDE_WINDOW_H

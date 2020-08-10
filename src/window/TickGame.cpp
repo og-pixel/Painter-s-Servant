@@ -46,7 +46,7 @@ bool TickGame::checkConditions() {
 bool TickGame::createBoard() {
   for(int i = 0; i < gameHeight; i++) {
     for(int j = 0; j < gameWidth; j++) {
-      mvwaddstr(windowList.at(0), i +(LINES/2) - (gameHeight/2), j +(COLS/2) - (gameWidth/2), std::to_string(matrix[i][j]).c_str());
+      mvwaddstr(windowList.at(0), i + (LINES/2) - (gameHeight/2), j + (COLS/2) - (gameWidth/2), std::to_string(matrix[i][j]).c_str());
     }
   }
   refresh();
@@ -59,44 +59,48 @@ void TickGame::render() {
 }
 
 void TickGame::navigation() {
+  WINDOW* topWindow;
+
+
   wmove(windowList.at(0), yPos, xPos);
   refresh();
   wrefresh(windowList.at(0));
   keypad(windowList.at(0), true);
 
   int character = getch();
-  // do {
-    switch(character) {
-    case KEY_LEFT:
-      if((xPos - 1) > 0) xPos--;
-      break;
-    case KEY_RIGHT:
-      if((xPos + 2) < COLS) xPos++;
-      break;
-    case KEY_UP:
-      if((yPos - 1) > 0) yPos--;
-      break;
-    case KEY_DOWN:
-      if((yPos + 2) < LINES) yPos++;
-      break;
-    case 'j':
-      std::cout << xPos << " " << yPos << std::endl;
-      playerMove(xPos, yPos);
-      computerMove();
-      break;
-    case 'k':
-      break;
-    case KEY_RESIZE:
-      // box(windowList.at(0), 0, 0);
-      // mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
-      wresize(windowList.at(0), 20, 20);
-      break;
-    }
-    wmove(windowList.at(0), yPos - (gameHeight / 2), xPos - (gameWidth / 2));
-    refresh();
-    wrefresh(windowList.at(0));
-    // character = getch();
-  // } while(character != 10);
+  switch(character) {
+  case KEY_LEFT:
+    if((xPos - 1) > 0) xPos--;
+    break;
+  case KEY_RIGHT:
+    if((xPos + 2) < COLS) xPos++;
+    break;
+  case KEY_UP:
+    if((yPos - 1) > 0) yPos--;
+    break;
+  case KEY_DOWN:
+    if((yPos + 2) < LINES) yPos++;
+    break;
+  case 'j':
+    std::cout << xPos << " " << yPos << std::endl;
+    playerMove(xPos, yPos);
+    computerMove();
+    break;
+  case 'k':
+    //TODO work in progress, this part does spawn an additional window inside a window
+    topWindow = newwin(20, 20, 5, 5);
+    box(topWindow, 0 , 0);
+    wrefresh(topWindow);
+    break;
+  case KEY_RESIZE:
+    // box(windowList.at(0), 0, 0);
+    // mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
+    wresize(windowList.at(0), 20, 20);
+    break;
+  }
+  wmove(windowList.at(0), yPos - (gameHeight / 2), xPos - (gameWidth / 2));
+  refresh();
+  wrefresh(windowList.at(0));
 }
 
 bool TickGame::playerMove(int x, int y) {
