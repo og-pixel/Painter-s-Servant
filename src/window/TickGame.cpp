@@ -12,6 +12,17 @@ TickGame::TickGame(int width, int height):Window(width, height) {
   // to box
   // WINDOW* window1 = newwin(LINES, COLS,0,0)
   // box(windowList.at(0), 0, 0);
+
+  //TODO gameWidth and height might stay here
+  gameWidth = width;
+  gameHeight = height;
+
+  //TODO this part ensure new matrix has correct size
+  matrix.resize(gameHeight);
+  for(int i = 0; i < gameHeight; i++) {
+    matrix[i].resize(gameWidth);
+  }
+
   if(!isTerminalSizeSufficient()) std::exit(1);
 }
 
@@ -69,6 +80,7 @@ void TickGame::navigation() {
       if((yPos + 2) < LINES) yPos++;
       break;
     case 'j':
+      std::cout << xPos << " " << yPos << std::endl;
       playerMove(xPos, yPos);
       computerMove();
       break;
@@ -80,7 +92,7 @@ void TickGame::navigation() {
       wresize(windowList.at(0), 20, 20);
       break;
     }
-    wmove(windowList.at(0), yPos, xPos);
+    wmove(windowList.at(0), yPos - (gameHeight / 2), xPos - (gameWidth / 2));
     refresh();
     wrefresh(windowList.at(0));
     // character = getch();

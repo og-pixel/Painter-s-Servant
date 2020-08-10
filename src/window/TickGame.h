@@ -1,3 +1,4 @@
+
 #ifndef GOBLINGUIDE_TICKTACKTOEWINDOW_H
 #define GOBLINGUIDE_TICKTACKTOEWINDOW_H
 
@@ -15,12 +16,15 @@ private:
   int xPos = 2;
   int yPos = 2;
 
-  int gameWidth = 35;
-  int gameHeight = 20;
+  int gameWidth; // = 35;
+  int gameHeight; // = 20;
   //0 Empty
   //1 Player
   //2 AI
   int board[20][35] = {};
+
+  //TODO matrix will replace board, I need a dynamic array
+  std::vector<std::vector<int>> matrix;
 
   //Functions
   bool createBoard();
