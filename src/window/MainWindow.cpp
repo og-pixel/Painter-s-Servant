@@ -38,5 +38,5 @@ MainWindow::MainWindow() {
 Window::~Window(){
 }
 
-void MainWindow::testFunction() {
+void MainWindow::virtualFunction() {
 }

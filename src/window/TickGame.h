@@ -19,7 +19,7 @@ private:
   //0 Empty
   //1 Player
   //2 AI
-  std::vector<std::vector<int>> board;
+  std::vector<std::vector<int>> boardMatrix;
   int gameWidth;
   int gameHeight;
 
@@ -40,7 +40,7 @@ public:
   void render();
   void navigation();
 
-  void testFunction() override;
+  void virtualFunction() override;
   bool startGame();
   bool isRunning();
 };

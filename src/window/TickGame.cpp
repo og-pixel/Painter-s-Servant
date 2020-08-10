@@ -18,9 +18,9 @@ TickGame::TickGame(int width, int height):Window(width, height) {
   gameHeight = height;
 
   //TODO this part ensure new matrix has correct size
-  board.resize(gameHeight);
+  boardMatrix.resize(gameHeight);
   for(int i = 0; i < gameHeight; i++) {
-    board[i].resize(gameWidth);
+    boardMatrix[i].resize(gameWidth);
   }
 
   if(!isTerminalSizeSufficient()) std::exit(1);
@@ -31,7 +31,7 @@ bool TickGame::chooseBoardField(int x, int y, int player) {
   if(x > gameWidth || y > gameHeight) return false;
 
 
-  if(board[y][x] == 0) board[y][x] = player;
+  if(boardMatrix[y][x] == 0) boardMatrix[y][x] = player;
   else return false;
   checkConditions();
 
@@ -50,7 +50,7 @@ bool TickGame::checkConditions() {
 bool TickGame::createBoard() {
   for(int i = 0; i < gameHeight; i++) {
     for(int j = 0; j < gameWidth; j++) {
-      mvwaddstr(windowList.at(0), i + (LINES/2) - (gameHeight/2), j + (COLS/2) - (gameWidth/2), std::to_string(board[i][j]).c_str());
+      mvwaddstr(windowList.at(0), i + (LINES/2) - (gameHeight/2), j + (COLS/2) - (gameWidth/2), std::to_string(boardMatrix[i][j]).c_str());
     }
   }
   refresh();
@@ -125,10 +125,7 @@ bool TickGame::computerMove() {
 }
 
 
-void TickGame::testFunction() {
-
-
-}
+void TickGame::virtualFunction() {}
 
 bool TickGame::isRunning() {
   return true;

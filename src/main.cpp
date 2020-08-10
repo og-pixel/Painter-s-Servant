@@ -13,7 +13,7 @@ void initMainScreen() {
 int main() {
   initMainScreen();
 
-  TickGame* board = new TickGame(5, 3);
+  TickGame* board = new TickGame(3, 3);
   board->startGame();
   board->close();
   return 0;

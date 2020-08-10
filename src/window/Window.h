@@ -21,7 +21,9 @@ public:
   //Functions
   char getInput();
   void close();
-  virtual void testFunction() = 0;
+
+  //This function is made so Window Class cannot be instantiated 
+  virtual void virtualFunction() = 0;
 
   // Getters
   int getWidth();
