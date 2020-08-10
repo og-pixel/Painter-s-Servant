@@ -21,7 +21,7 @@ private:
   //0 Empty
   //1 Player
   //2 AI
-  int board[20][35] = {};
+  // int board[20][35] = {};
 
   //TODO matrix will replace board, I need a dynamic array
   std::vector<std::vector<int>> matrix;

@@ -27,7 +27,7 @@ TickGame::TickGame(int width, int height):Window(width, height) {
 }
 
 bool TickGame::chooseBoardField(int x, int y, int player) {
-  if(board[y][x] == 0) board[y][x] = player;
+  if(matrix[y][x] == 0) matrix[y][x] = player;
   else return false;
   checkConditions();
 
@@ -46,7 +46,7 @@ bool TickGame::checkConditions() {
 bool TickGame::createBoard() {
   for(int i = 0; i < gameHeight; i++) {
     for(int j = 0; j < gameWidth; j++) {
-      mvwaddstr(windowList.at(0), i +(LINES/2) - (gameHeight/2), j +(COLS/2) - (gameWidth/2), std::to_string(board[i][j]).c_str());
+      mvwaddstr(windowList.at(0), i +(LINES/2) - (gameHeight/2), j +(COLS/2) - (gameWidth/2), std::to_string(matrix[i][j]).c_str());
     }
   }
   refresh();
