@@ -15,11 +15,10 @@ Window::Window(int width, int height) {
     mainWindow = newwin(0, 0, 0, 0);
     windowName = "Main Window";
   }
-  //Window::mainWindow = newwin(0, 0, 0, 0);
 
   WINDOW *newWindow = newwin(LINES, COLS, 0, 0);
   box(newWindow, 0, 0);
-  Window::windowList.push_back(newWindow);
+  windowList.push_back(newWindow);
 }
 
 
