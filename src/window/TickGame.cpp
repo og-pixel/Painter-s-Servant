@@ -3,10 +3,10 @@
 //
 #include "TickGame.h"
 
-// Main Constructor
-TickGame::TickGame(): TickGame(5, 5){
-}
+// Main Constructor, default parameters
+TickGame::TickGame(): TickGame(5, 5) {}
 
+// Constructor
 TickGame::TickGame(int gameWidth, int gameHeight): Window() {
   if(!isTerminalSizeSufficient()) std::exit(1);
 
@@ -50,10 +50,6 @@ bool TickGame::createBoard() {
   refresh();
   wrefresh(mymap["main"]);
   return true;
-}
-
-void TickGame::render() {
-  createBoard();
 }
 
 void TickGame::navigation() {
@@ -126,13 +122,13 @@ bool TickGame::isRunning() {
 }
 
 bool TickGame::startGame(){
-  WINDOW* win = newwin(gameWidth + 1, gameHeight + 1, 2, 2);
-  box(win, 0, 0);
-  refresh();
-  wrefresh(win);
+  // WINDOW* win = newwin(gameWidth + 1, gameHeight + 1, 2, 2);
+  // box(win, 0, 0);
+  // refresh();
+  // wrefresh(win);
 
   while(isRunning()) {
-    render();
+    createBoard();
     navigation();
   }
   return true;

@@ -36,7 +36,6 @@ public:
 
   bool chooseBoardField(int x, int y, int player);
   bool checkConditions();
-  void render();
   void navigation();
 
   void virtualFunction() override;
