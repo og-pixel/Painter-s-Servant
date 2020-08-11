@@ -31,7 +31,7 @@ private:
 public:
   //Constructor
   TickGame();
-  TickGame(int width, int height);
+  TickGame(int gameWidth, int gameHeight);
 
 
   bool chooseBoardField(int x, int y, int player);

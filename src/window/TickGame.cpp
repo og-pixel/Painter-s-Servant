@@ -7,23 +7,16 @@
 TickGame::TickGame(): TickGame(5, 5){
 }
 
-TickGame::TickGame(int width, int height): Window() {
-  //TODO this needs to actually know what
-  // to box
-  // WINDOW* window1 = newwin(LINES, COLS,0,0)
-  // box(windowList.at(0), 0, 0);
-
-  //TODO gameWidth and height might stay here
-  gameWidth = width;
-  gameHeight = height;
-
-  //TODO this part ensure new matrix has correct size
-  boardMatrix.resize(gameHeight);
-  for(int i = 0; i < gameHeight; i++) {
-    boardMatrix[i].resize(gameWidth);
-  }
-
+TickGame::TickGame(int gameWidth, int gameHeight): Window() {
   if(!isTerminalSizeSufficient()) std::exit(1);
+
+  this->gameWidth = gameWidth;
+  this->gameHeight = gameHeight;
+
+  // Create board of appropriate game size
+  boardMatrix.resize(gameHeight);
+  for(int i = 0; i < gameHeight; i++)
+    boardMatrix[i].resize(gameWidth);
 }
 
 bool TickGame::chooseBoardField(int x, int y, int player) {
