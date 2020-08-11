@@ -1,13 +1,13 @@
 //
-// Created by og_pixel 
+// Created by og_pixel
 //
 #include "TickGame.h"
 
 // Main Constructor
-TickGame::TickGame(): TickGame(10, 10){
+TickGame::TickGame(): TickGame(5, 5){
 }
 
-TickGame::TickGame(int width, int height):Window(width, height) {
+TickGame::TickGame(int width, int height): Window() {
   //TODO this needs to actually know what
   // to box
   // WINDOW* window1 = newwin(LINES, COLS,0,0)

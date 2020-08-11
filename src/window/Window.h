@@ -7,7 +7,7 @@ class Window {
 public:
   //Constructors
   Window();
-  Window(int width, int height);
+  // Window(int width, int height);
 
   ~Window();
 
