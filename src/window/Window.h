@@ -7,15 +7,15 @@ class Window {
 public:
   //Constructors
   Window();
-  // Window(int width, int height);
 
+  //Deconstructor
   ~Window();
 
   bool checkSize();
 
   //All windows should be stored here
   //TODO not used atm
-  static std::vector<WINDOW*> windowList;
+  // static std::vector<WINDOW*> windowList;
   static std::unordered_map<std::string, WINDOW*> mymap;
 
   //TODO this is meant to be a main window that the game will be at
@@ -35,18 +35,16 @@ public:
   int getHeight() const;
   std::string getWindowName() const;
 
-   std::vector<WINDOW*> getWindowList();
+  // std::vector<WINDOW*> getWindowList() const;
+  std::unordered_map<std::string, WINDOW*> getMap() const;
+
   // Setters
 
 private:
+  std::string windowName;
   int width = 0;
   int height = 0;
 
-  //Name used by the window, used as a key
-  // in the hash map (unordered list)
-  std::string windowName;
-
-  //TODO possibly a function for first time start
 };
 
 #endif //GOBLINGUIDE_WINDOW_H

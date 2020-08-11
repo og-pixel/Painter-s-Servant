@@ -20,5 +20,5 @@ TEST_CASE("Create two windows and see if they are stored correctly in the static
   Window* tickTackToe = new MainWindow();
 
 
-  REQUIRE_FALSE(Window::windowList.at(0) == Window::windowList.at(1));
+  // REQUIRE();
 }

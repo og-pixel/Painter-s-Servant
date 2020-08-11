@@ -1,6 +1,7 @@
 #include "Window.h"
 
-std::vector<WINDOW*> Window::windowList;
+// std::vector<WINDOW*> Window::windowList;
+std::unordered_map<std::string, WINDOW*> Window::mymap;
 WINDOW* Window::mainWindow = nullptr;
 
 // Main Constructor, it should be used by all other windows
@@ -9,10 +10,11 @@ Window::Window() {
   if(!mainWindow){
     mainWindow = newwin(LINES, COLS, 0, 0);
     box(mainWindow, 0, 0);
-    windowName = "Main Window";
-    windowList.push_back(mainWindow);
+    windowName = "main";
+    mymap[windowName] = mainWindow;
+    // windowList.push_back(mainWindow);
   }
-};
+}
 
 
 // Window::Window(int width, int height) {
@@ -21,9 +23,9 @@ Window::Window() {
 // }
 
 
-std::vector<WINDOW*> Window::getWindowList(){
-  return windowList;
-}
+// std::vector<WINDOW*> Window::getWindowList() const {
+//   return windowList;
+// }
 
 int Window::getHeight() const {
   return height;

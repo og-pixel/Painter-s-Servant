@@ -21,12 +21,13 @@ TickGame::TickGame(int gameWidth, int gameHeight): Window() {
 
 bool TickGame::chooseBoardField(int x, int y, int player) {
   //TODO this is another sanity check for the time being
+  // to prevent most segfaults
   if(x > gameWidth || y > gameHeight) return false;
 
 
   if(boardMatrix[y][x] == 0) boardMatrix[y][x] = player;
   else return false;
-  checkConditions();
+  // checkConditions();
 
   return true;
 }
@@ -43,11 +44,11 @@ bool TickGame::checkConditions() {
 bool TickGame::createBoard() {
   for(int i = 0; i < gameHeight; i++) {
     for(int j = 0; j < gameWidth; j++) {
-      mvwaddstr(windowList.at(0), i + (LINES/2) - (gameHeight/2), j + (COLS/2) - (gameWidth/2), std::to_string(boardMatrix[i][j]).c_str());
+      mvwaddstr(mymap["main"], i + (LINES/2) - (gameHeight/2), j + (COLS/2) - (gameWidth/2), std::to_string(boardMatrix[i][j]).c_str());
     }
   }
   refresh();
-  wrefresh(windowList.at(0));
+  wrefresh(mymap["main"]);
   return true;
 }
 
@@ -59,10 +60,10 @@ void TickGame::navigation() {
   WINDOW* topWindow;
 
 
-  wmove(windowList.at(0), yPos, xPos);
+  wmove(mymap["main"], yPos, xPos);
   refresh();
-  wrefresh(windowList.at(0));
-  keypad(windowList.at(0), true);
+  wrefresh(mymap["main"]);
+  keypad(mymap["main"], true);
 
   int character = getch();
   switch(character) {
@@ -92,12 +93,12 @@ void TickGame::navigation() {
   case KEY_RESIZE:
     // box(windowList.at(0), 0, 0);
     // mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
-    wresize(windowList.at(0), 20, 20);
+    wresize(mymap["main"], 20, 20);
     break;
   }
-  wmove(windowList.at(0), yPos - (gameHeight / 2), xPos - (gameWidth / 2));
+  wmove(mymap["main"], yPos - (gameHeight / 2), xPos - (gameWidth / 2));
   refresh();
-  wrefresh(windowList.at(0));
+  wrefresh(mymap["main"]);
 }
 
 bool TickGame::playerMove(int x, int y) {
