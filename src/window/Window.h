@@ -25,14 +25,17 @@ public:
   //Functions
   char getInput();
   void close();
+  bool isMainWindow();
 
   //This function is made so Window Class cannot be instantiated 
   virtual void virtualFunction() = 0;
 
   // Getters
-  int getWidth();
-  int getHeight();
-  std::vector<WINDOW*> getWindowList();
+  int getWidth() const;
+  int getHeight() const;
+  std::string getWindowName() const;
+
+   std::vector<WINDOW*> getWindowList();
   // Setters
 
 private:

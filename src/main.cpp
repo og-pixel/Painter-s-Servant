@@ -14,7 +14,9 @@ int main() {
   initMainScreen();
 
   TickGame* board = new TickGame(3, 3);
-  board->startGame();
-  board->close();
+  std::cout << board->isMainWindow() << std::endl;
+
+  // board->startGame();
+  // board->close();
   return 0;
 }
