@@ -81,9 +81,13 @@ void TickGame::navigation() {
     computerMove();
     break;
   case 'k':
-    //TODO work in progress, this part does spawn an additional window inside a window
-    topWindow = newwin(20, 20, 5, 5);
-    box(topWindow, 0 , 0);
+    topWindow = derwin(mymap["main"], 10, 20, 2, 2);
+    box(topWindow, 0, 0);
+    mvwaddstr(topWindow, 1, 1, "hello");
+    wrefresh(topWindow);
+    break;
+  case 'l':
+    mvwin(topWindow, 20, 20);
     wrefresh(topWindow);
     break;
   case KEY_RESIZE:
