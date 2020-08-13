@@ -1,6 +1,5 @@
 #include "Window.h"
 
-// std::vector<WINDOW*> Window::windowList;
 std::unordered_map<std::string, WINDOW*> Window::mymap;
 WINDOW* Window::mainWindow = nullptr;
 
@@ -10,22 +9,9 @@ Window::Window() {
   if(!mainWindow){
     mainWindow = newwin(LINES, COLS, 0, 0);
     box(mainWindow, 0, 0);
-    windowName = "main";
-    mymap[windowName] = mainWindow;
-    // windowList.push_back(mainWindow);
+    mymap[mainWindowName] = mainWindow;
   }
 }
-
-
-// Window::Window(int width, int height) {
-  //TODO work on this bit
-  // it needs to create a main window and store it// 
-// }
-
-
-// std::vector<WINDOW*> Window::getWindowList() const {
-//   return windowList;
-// }
 
 int Window::getHeight() const {
   return height;
@@ -36,7 +22,7 @@ int Window::getWidth() const {
 }
 
 std::string Window::getWindowName() const {
-  return windowName;
+  return mainWindowName;
 }
 
 bool Window::checkSize() {

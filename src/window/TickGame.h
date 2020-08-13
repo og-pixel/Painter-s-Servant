@@ -9,18 +9,18 @@
 class TickGame: public Window {
 
 private:
+
   //Variables
   bool playerTurn = true;
-
   int xPos = 1;
   int yPos = 1;
+  int gameBoardWidth;
+  int gameBoardHeight;
 
   //0 Empty
   //1 Player
   //2 AI
   std::vector<std::vector<int>> boardMatrix;
-  int gameWidth;
-  int gameHeight;
 
   //Functions
   bool createBoard();
@@ -29,10 +29,10 @@ private:
   bool isTerminalSizeSufficient();
 
 public:
+
   //Constructor
   TickGame();
   TickGame(int gameWidth, int gameHeight);
-
 
   bool chooseBoardField(int x, int y, int player);
   bool checkConditions();

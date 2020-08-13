@@ -10,8 +10,8 @@ TickGame::TickGame(): TickGame(5, 5) {}
 TickGame::TickGame(int gameWidth, int gameHeight): Window() {
   if(!isTerminalSizeSufficient()) std::exit(1);
 
-  this->gameWidth = gameWidth;
-  this->gameHeight = gameHeight;
+  this->gameBoardWidth = gameWidth;
+  this->gameBoardHeight = gameHeight;
 
   // Create board of appropriate game size
   boardMatrix.resize(gameHeight);
@@ -22,7 +22,7 @@ TickGame::TickGame(int gameWidth, int gameHeight): Window() {
 bool TickGame::chooseBoardField(int x, int y, int player) {
   //TODO this is another sanity check for the time being
   // to prevent most segfaults
-  if(x > gameWidth || y > gameHeight) return false;
+  if(x > gameBoardWidth || y > gameBoardHeight) return false;
 
 
   if(boardMatrix[y][x] == 0) boardMatrix[y][x] = player;
@@ -42,9 +42,9 @@ bool TickGame::checkConditions() {
 }
 
 bool TickGame::createBoard() {
-  for(int i = 0; i < gameHeight; i++) {
-    for(int j = 0; j < gameWidth; j++) {
-      mvwaddstr(mymap["main"], i + (LINES/2) - (gameHeight/2), j + (COLS/2) - (gameWidth/2), std::to_string(boardMatrix[i][j]).c_str());
+  for(int i = 0; i < gameBoardHeight; i++) {
+    for(int j = 0; j < gameBoardWidth; j++) {
+      mvwaddstr(mymap["main"], i + (LINES/2) - (gameBoardHeight/2), j + (COLS/2) - (gameBoardWidth/2), std::to_string(boardMatrix[i][j]).c_str());
     }
   }
   refresh();
@@ -53,7 +53,7 @@ bool TickGame::createBoard() {
 }
 
 void TickGame::navigation() {
-  WINDOW* topWindow;
+  // WINDOW* topWindow;
 
 
   wmove(mymap["main"], yPos, xPos);
@@ -81,14 +81,14 @@ void TickGame::navigation() {
     computerMove();
     break;
   case 'k':
-    topWindow = derwin(mymap["main"], 10, 20, 2, 2);
-    box(topWindow, 0, 0);
-    mvwaddstr(topWindow, 1, 1, "hello");
-    wrefresh(topWindow);
+    // // topWindow = derwin(mymap["main"], 10, 20, 2, 2);
+    // box(topWindow, 0, 0);
+    // mvwaddstr(topWindow, 1, 1, "hello");
+    // wrefresh(topWindow);
     break;
   case 'l':
-    mvwin(topWindow, 20, 20);
-    wrefresh(topWindow);
+    // mvwin(topWindow, 20, 20);
+    // wrefresh(topWindow);
     break;
   case KEY_RESIZE:
     // box(windowList.at(0), 0, 0);
@@ -96,7 +96,7 @@ void TickGame::navigation() {
     wresize(mymap["main"], 20, 20);
     break;
   }
-  wmove(mymap["main"], yPos - (gameHeight / 2), xPos - (gameWidth / 2));
+  wmove(mymap["main"], yPos - (gameBoardHeight / 2), xPos - (gameBoardWidth / 2));
   refresh();
   wrefresh(mymap["main"]);
 }
@@ -106,8 +106,8 @@ bool TickGame::playerMove(int x, int y) {
 }
 
 bool TickGame::isTerminalSizeSufficient() {
-  if((COLS >= gameWidth) &&
-     LINES >= gameHeight) {
+  if((COLS >= gameBoardWidth) &&
+     LINES >= gameBoardHeight) {
     return true;
   } else return false;
   // return true;
