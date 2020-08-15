@@ -26,6 +26,9 @@ public:
   //This function is made so Window Class cannot be instantiated
   virtual void virtualFunction() = 0;
 
+  //TODO I think I will make this function
+  // virtual void navigation() = 0;
+
   // Getters
   int getWidth() const;
   int getHeight() const;
@@ -34,18 +37,20 @@ public:
 
   // Setters
 
+  //TODO move back to private
+  WINDOW* subWindow;
+  static WINDOW* mainWindow;
+
 private:
+
   //TODO this is meant to be a main window that the game will be at
   // initialised once at the start and later maintained.
-  static WINDOW* mainWindow;
   std::string mainWindowName = "main";
 
-  WINDOW* subWindow;
 
   //TODO maybe delete
   int width = 0;
   int height = 0;
-
 };
 
 #endif //GOBLINGUIDE_WINDOW_H

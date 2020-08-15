@@ -8,6 +8,24 @@
 // cases or anything like that.
 class TickGame: public Window {
 
+public:
+
+  //Constructor
+  TickGame();
+  TickGame(int gameWidth, int gameHeight);
+
+  //Deconstructor
+  //TODO
+
+  //Functions
+  bool chooseBoardField(int x, int y, int player);
+  bool checkConditions();
+  void navigation();
+
+  void virtualFunction() override;
+  bool startGame();
+  bool isRunning();
+
 private:
 
   //Variables
@@ -27,20 +45,6 @@ private:
   bool computerMove();
   bool playerMove(int x, int y);
   bool isTerminalSizeSufficient();
-
-public:
-
-  //Constructor
-  TickGame();
-  TickGame(int gameWidth, int gameHeight);
-
-  bool chooseBoardField(int x, int y, int player);
-  bool checkConditions();
-  void navigation();
-
-  void virtualFunction() override;
-  bool startGame();
-  bool isRunning();
 };
 
 #endif //GOBLINGUIDE_TICKTACKTOEWINDOW_H

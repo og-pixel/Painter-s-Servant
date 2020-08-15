@@ -53,9 +53,6 @@ bool TickGame::createBoard() {
 }
 
 void TickGame::navigation() {
-  // WINDOW* topWindow;
-
-
   wmove(mymap["main"], yPos, xPos);
   refresh();
   wrefresh(mymap["main"]);
@@ -81,14 +78,18 @@ void TickGame::navigation() {
     computerMove();
     break;
   case 'k':
+    if(!subWindow) {
+    subWindow = subwin(mainWindow, 6, 24, (LINES/2) - (24/4), (COLS/2) - (6/1));
+      box(subWindow, 0, 0);
+      mvwaddstr(subWindow, 1, 2, "hello");
+      wrefresh(subWindow);
+    }
     // // topWindow = derwin(mymap["main"], 10, 20, 2, 2);
     // box(topWindow, 0, 0);
     // mvwaddstr(topWindow, 1, 1, "hello");
     // wrefresh(topWindow);
     break;
   case 'l':
-    // mvwin(topWindow, 20, 20);
-    // wrefresh(topWindow);
     break;
   case KEY_RESIZE:
     // box(windowList.at(0), 0, 0);
