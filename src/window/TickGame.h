@@ -41,7 +41,7 @@ private:
   std::vector<std::vector<int>> boardMatrix;
 
   //Functions
-  bool createBoard();
+  bool renderBoard();
   bool computerMove();
   bool playerMove(int x, int y);
   bool isTerminalSizeSufficient();

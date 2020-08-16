@@ -22,6 +22,7 @@ public:
   void close();
   bool checkSize();
   bool isMainWindow();
+  void closeApplication(std::string message);
 
   //This function is made so Window Class cannot be instantiated
   virtual void virtualFunction() = 0;
@@ -30,15 +31,15 @@ public:
   // virtual void navigation() = 0;
 
   // Getters
-  int getWidth() const;
-  int getHeight() const;
+  // int getWidth() const;
+  // int getHeight() const;
   std::string getWindowName() const;
   std::unordered_map<std::string, WINDOW*> getMap() const;
 
   // Setters
 
   //TODO move back to private
-  WINDOW* subWindow;
+  static WINDOW* subWindow;
   static WINDOW* mainWindow;
 
 private:
@@ -47,10 +48,7 @@ private:
   // initialised once at the start and later maintained.
   std::string mainWindowName = "main";
 
-
-  //TODO maybe delete
-  int width = 0;
-  int height = 0;
+  //Functions
 };
 
 #endif //GOBLINGUIDE_WINDOW_H

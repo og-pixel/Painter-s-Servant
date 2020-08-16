@@ -2,6 +2,7 @@
 
 std::unordered_map<std::string, WINDOW*> Window::mymap;
 WINDOW* Window::mainWindow = nullptr;
+WINDOW* Window::subWindow;
 
 // Main Constructor, it should be used by all other windows
 // as it does initialized ncurses screens and boxes.
@@ -11,14 +12,6 @@ Window::Window() {
     box(mainWindow, 0, 0);
     mymap[mainWindowName] = mainWindow;
   }
-}
-
-int Window::getHeight() const {
-  return height;
-}
-
-int Window::getWidth() const {
-  return width;
 }
 
 std::string Window::getWindowName() const {
@@ -40,4 +33,10 @@ void Window::close() {
 bool Window::isMainWindow() {
   if(mainWindow) return true;
   else return false;
+}
+
+void Window::closeApplication(std::string message) {
+  endwin();
+  std::cout << message << std::endl;
+  std::exit(0);
 }
