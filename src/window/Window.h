@@ -15,18 +15,13 @@ public:
 
   //All windows should be stored here
   //TODO rename
-  static std::unordered_map<std::string, WINDOW*> mymap;
+  static std::unordered_map<std::string, WINDOW*> windowMap;
 
   //Functions
   void close();
   bool checkSize();
   bool isMainWindow();
   void closeApplication(std::string message);
-
-  //This function is made so Window Class cannot be instantiated
-  // virtual void virtualFunction() = 0;
-
-  //TODO I think I will make this function
   virtual void navigation() = 0;
 
   // Getters
@@ -38,17 +33,15 @@ public:
   // Setters
 
   //TODO move back to private
-  static WINDOW* subWindow;
   static WINDOW* mainWindow;
+  static WINDOW* subWindow;
 
 private:
 
-  //TODO this is meant to be a main window that the game will be at
-  // initialised once at the start and later maintained.
   std::string mainWindowName = "main";
 
-  int subwinWidth = 32;
-  int subwinHeight = 10;
+  int subwinWidth = 82;
+  int subwinHeight = 16;
 
   //Functions
 };

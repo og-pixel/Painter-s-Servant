@@ -15,15 +15,14 @@ public:
   TickGame(int gameWidth, int gameHeight);
 
   //Deconstructor
-  //TODO
+  ~TickGame();
 
   //Functions
   bool chooseBoardField(int x, int y, int player);
   bool checkConditions();
-  void navigation() override;
-
   bool startGame();
   bool isRunning();
+  void navigation() override;
 
 private:
 

@@ -20,30 +20,20 @@ TickGame::TickGame(int gameWidth, int gameHeight): Window() {
 }
 
 bool TickGame::chooseBoardField(int x, int y, int player) {
-  //TODO this is another sanity check for the time being
-  // to prevent most segfaults
   if(x > gameBoardWidth || y >= gameBoardHeight) return false;
 
-
-  if(boardMatrix[y][x] == 0) boardMatrix[y][x] = player;
-  else return false;
-  // checkConditions();
-
-  return true;
-}
-
-bool TickGame::checkConditions() {
-  for(int i = 0; i < 5; i++) {
-    for(int j = 0; j < 5; j++) {
-      // std::cout << board[j][i] << ",";
-    }
+  if(boardMatrix[y][x] == 0) {
+    boardMatrix[y][x] = player;
+    return true;
   }
-  return true;
+  else return false;
 }
 
 bool TickGame::renderBoard() {
-  subWindow = subwin(mainWindow, getSubwinHeight(), getSubwinWidth(), (LINES/2) - (8/2) + 1, (COLS/2) - (18/2));
-  box(subWindow, 0, 0);
+  if(!subWindow) {
+    subWindow = derwin(mainWindow, getSubwinHeight(), getSubwinWidth(), (LINES/2) - (getSubwinHeight()/2) + 1, (COLS/2) - (getSubwinWidth()/2));
+    box(subWindow, 0, 0);
+  }
   for(int i = 0; i < gameBoardHeight; i++) {
     for(int j = 0; j < gameBoardWidth; j++) {
       mvwaddstr(subWindow, i + 2, j + 2, std::to_string(boardMatrix[i][j]).c_str());
@@ -59,10 +49,9 @@ void TickGame::navigation() {
   wmove(subWindow, yPos, xPos);
   refresh();
   wrefresh(subWindow);
-  keypad(subWindow, true);
 
-  int character = getch();
-  switch(character) {
+  int input = getch();
+  switch(input) {
   case KEY_LEFT:
     if((xPos - 1) > 0) xPos--;
     break;
@@ -82,10 +71,15 @@ void TickGame::navigation() {
   case 'k':
     break;
   case 'l':
-    break;
+        break;
   case KEY_RESIZE:
-    //TODO I still need to work on it
-    wresize(subWindow, 20, 20);
+    clear();
+    mvwin(subWindow, (LINES/2) - (getSubwinHeight()/2) + 1,
+          (COLS/2) - (getSubwinWidth()/2));
+
+    wresize(subWindow, getSubwinHeight(), getSubwinWidth());
+    // box(mainWindow, 0, 0);
+    box(subWindow, 0, 0);
     break;
   }
 }
@@ -108,7 +102,6 @@ bool TickGame::computerMove() {
   return chooseBoardField(0, 0, 2);
 }
 
-
 bool TickGame::isRunning() {
   return true;
 }
@@ -120,4 +113,3 @@ bool TickGame::startGame(){
   }
   return true;
 }
-

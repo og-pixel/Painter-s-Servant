@@ -1,6 +1,6 @@
 #include "Window.h"
 
-std::unordered_map<std::string, WINDOW*> Window::mymap;
+std::unordered_map<std::string, WINDOW*> Window::windowMap;
 WINDOW* Window::mainWindow = nullptr;
 WINDOW* Window::subWindow;
 
@@ -10,7 +10,7 @@ Window::Window() {
   if(!mainWindow){
     mainWindow = newwin(LINES, COLS, 0, 0);
     box(mainWindow, 0, 0);
-    mymap[mainWindowName] = mainWindow;
+    windowMap[mainWindowName] = mainWindow;
   }
   start_color();
 }
@@ -22,10 +22,6 @@ std::string Window::getWindowName() const {
 bool Window::checkSize() {
   return true;
 }
-
-// char Window::getInput() {
-//   return getch();
-// }
 
 void Window::close() {
   endwin();
