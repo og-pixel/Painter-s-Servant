@@ -43,23 +43,24 @@ bool TickGame::checkConditions() {
 }
 
 bool TickGame::renderBoard() {
+  subWindow = subwin(mainWindow, 8, 18, (LINES/2) - (8/2) + 1, (COLS/2) - (18/2));
+  box(subWindow, 0, 0);
   for(int i = 0; i < gameBoardHeight; i++) {
     for(int j = 0; j < gameBoardWidth; j++) {
-      // mvwaddstr(mymap["main"], i + (LINES/2) - (gameBoardHeight/2), j + (COLS/2) - (gameBoardWidth/2), std::to_string(boardMatrix[i][j]).c_str());
-
-      if(subWindow) mvwaddstr(subWindow, i - (gameBoardHeight/2), j - (gameBoardWidth/2), std::to_string(boardMatrix[i][j]).c_str());
+      mvwaddstr(subWindow, i + 2, j + 2, std::to_string(boardMatrix[i][j]).c_str());
     }
   }
+  wrefresh(mainWindow);
+  wrefresh(subWindow);
   refresh();
-  wrefresh(mymap["main"]);
   return true;
 }
 
 void TickGame::navigation() {
-  wmove(mymap["main"], yPos, xPos);
+  wmove(subWindow, yPos, xPos);
   refresh();
-  wrefresh(mymap["main"]);
-  keypad(mymap["main"], true);
+  wrefresh(subWindow);
+  keypad(subWindow, true);
 
   int character = getch();
   switch(character) {
@@ -76,27 +77,12 @@ void TickGame::navigation() {
     if((yPos + 2) < LINES) yPos++;
     break;
   case 'j':
-    std::cout << xPos << " " << yPos << std::endl;
+    std::cout << xPos << " " << yPos;
     playerMove(xPos, yPos);
     computerMove();
     break;
   case 'k':
-    if(!subWindow) {
-    subWindow = subwin(mainWindow, 8, 18, (LINES/2) - (8/2) + 1, (COLS/2) - (18/2));
-      box(subWindow, 0, 0);
-      mvwaddstr(subWindow, 1, 2, "hello");
 
-      for(int i = 0; i < gameBoardHeight; i++) {
-        for(int j = 0; j < gameBoardWidth; j++) {
-          mvwaddstr(subWindow, i + 2, j + 2, std::to_string(boardMatrix[i][j]).c_str());
-        }
-      }
-
-      wrefresh(subWindow);
-    // // topWindow = derwin(mymap["main"], 10, 20, 2, 2);
-    // box(topWindow, 0, 0);
-    // mvwaddstr(topWindow, 1, 1, "hello");
-    // wrefresh(topWindow);
     break;
   case 'l':
     break;
@@ -105,7 +91,7 @@ void TickGame::navigation() {
     // mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
     wresize(mymap["main"], 20, 20);
     break;
-  }
+
   wmove(mymap["main"], yPos - (gameBoardHeight / 2), xPos - (gameBoardWidth / 2));
   refresh();
   wrefresh(mymap["main"]);

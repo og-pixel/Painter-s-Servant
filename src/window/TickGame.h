@@ -34,6 +34,7 @@ private:
   int yPos = 1;
   int gameBoardWidth;
   int gameBoardHeight;
+  std::string gameWindowName;
 
   //0 Empty
   //1 Player
