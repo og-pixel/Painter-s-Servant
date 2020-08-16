@@ -50,9 +50,9 @@ bool TickGame::renderBoard() {
       mvwaddstr(subWindow, i + 2, j + 2, std::to_string(boardMatrix[i][j]).c_str());
     }
   }
+  refresh();
   wrefresh(mainWindow);
   wrefresh(subWindow);
-  refresh();
   return true;
 }
 
@@ -68,13 +68,13 @@ void TickGame::navigation() {
     if((xPos - 1) > 0) xPos--;
     break;
   case KEY_RIGHT:
-    if((xPos + 2) < COLS) xPos++;
+    if((xPos + 1) < subWindow->_maxx) xPos++;
     break;
   case KEY_UP:
     if((yPos - 1) > 0) yPos--;
     break;
   case KEY_DOWN:
-    if((yPos + 2) < LINES) yPos++;
+    if((yPos + 1) < subWindow->_maxy) yPos++;
     break;
   case 'j':
     std::cout << xPos << " " << yPos;
