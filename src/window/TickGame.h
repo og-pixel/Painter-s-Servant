@@ -31,7 +31,7 @@ private:
   //Variables
   bool playerTurn = true;
   int xPos = 1;
-  int yPos = 1;
+  int yPos = 2;
   int gameBoardWidth;
   int gameBoardHeight;
   std::string gameWindowName;

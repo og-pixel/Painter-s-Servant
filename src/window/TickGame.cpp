@@ -14,7 +14,6 @@ TickGame::TickGame(int gameWidth, int gameHeight): Window() {
   this->gameBoardWidth = gameWidth;
   this->gameBoardHeight = gameHeight;
 
-  // Create board of appropriate game size
   boardMatrix.resize(gameHeight);
   for(int i = 0; i < gameHeight; i++)
     boardMatrix[i].resize(gameWidth);
@@ -23,7 +22,7 @@ TickGame::TickGame(int gameWidth, int gameHeight): Window() {
 bool TickGame::chooseBoardField(int x, int y, int player) {
   //TODO this is another sanity check for the time being
   // to prevent most segfaults
-  if(x > gameBoardWidth || y > gameBoardHeight) return false;
+  if(x > gameBoardWidth || y >= gameBoardHeight) return false;
 
 
   if(boardMatrix[y][x] == 0) boardMatrix[y][x] = player;
@@ -43,7 +42,7 @@ bool TickGame::checkConditions() {
 }
 
 bool TickGame::renderBoard() {
-  subWindow = subwin(mainWindow, 8, 18, (LINES/2) - (8/2) + 1, (COLS/2) - (18/2));
+  subWindow = subwin(mainWindow, getSubwinHeight(), getSubwinWidth(), (LINES/2) - (8/2) + 1, (COLS/2) - (18/2));
   box(subWindow, 0, 0);
   for(int i = 0; i < gameBoardHeight; i++) {
     for(int j = 0; j < gameBoardWidth; j++) {
@@ -77,12 +76,10 @@ void TickGame::navigation() {
     if((yPos + 1) < subWindow->_maxy) yPos++;
     break;
   case 'j':
-    std::cout << xPos << " " << yPos;
-    playerMove(xPos, yPos);
+    playerMove(xPos - 2, yPos - 2);
     computerMove();
     break;
   case 'k':
-
     break;
   case 'l':
     break;

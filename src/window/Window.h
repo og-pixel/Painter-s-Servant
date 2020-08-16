@@ -18,7 +18,6 @@ public:
   static std::unordered_map<std::string, WINDOW*> mymap;
 
   //Functions
-  char getInput();
   void close();
   bool checkSize();
   bool isMainWindow();
@@ -31,10 +30,10 @@ public:
   // virtual void navigation() = 0;
 
   // Getters
-  // int getWidth() const;
-  // int getHeight() const;
   std::string getWindowName() const;
   std::unordered_map<std::string, WINDOW*> getMap() const;
+  int getSubwinHeight() const;
+  int getSubwinWidth() const;
 
   // Setters
 
@@ -47,6 +46,9 @@ private:
   //TODO this is meant to be a main window that the game will be at
   // initialised once at the start and later maintained.
   std::string mainWindowName = "main";
+
+  int subwinWidth = 32;
+  int subwinHeight = 10;
 
   //Functions
 };

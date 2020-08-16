@@ -12,6 +12,8 @@ Window::Window() {
     box(mainWindow, 0, 0);
     mymap[mainWindowName] = mainWindow;
   }
+  // subwinHeight = 12;
+  // subwinWidth = 42;
 }
 
 std::string Window::getWindowName() const {
@@ -22,9 +24,9 @@ bool Window::checkSize() {
   return true;
 }
 
-char Window::getInput() {
-  return getch();
-}
+// char Window::getInput() {
+//   return getch();
+// }
 
 void Window::close() {
   endwin();
@@ -39,4 +41,12 @@ void Window::closeApplication(std::string message) {
   endwin();
   std::cout << message << std::endl;
   std::exit(0);
+}
+
+int Window::getSubwinWidth() const {
+  return subwinWidth;
+}
+
+int Window::getSubwinHeight() const {
+  return subwinHeight;
 }
