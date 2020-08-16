@@ -12,8 +12,7 @@ Window::Window() {
     box(mainWindow, 0, 0);
     mymap[mainWindowName] = mainWindow;
   }
-  // subwinHeight = 12;
-  // subwinWidth = 42;
+  start_color();
 }
 
 std::string Window::getWindowName() const {

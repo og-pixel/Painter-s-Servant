@@ -20,9 +20,8 @@ public:
   //Functions
   bool chooseBoardField(int x, int y, int player);
   bool checkConditions();
-  void navigation();
+  void navigation() override;
 
-  void virtualFunction() override;
   bool startGame();
   bool isRunning();
 

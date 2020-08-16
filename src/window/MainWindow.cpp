@@ -38,5 +38,6 @@ MainWindow::MainWindow() {
 Window::~Window(){
 }
 
-void MainWindow::virtualFunction() {
+void MainWindow::navigation() {
+
 }

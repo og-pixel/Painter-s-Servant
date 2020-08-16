@@ -84,14 +84,9 @@ void TickGame::navigation() {
   case 'l':
     break;
   case KEY_RESIZE:
-    // box(windowList.at(0), 0, 0);
-    // mvwaddstr(windowList.at(0), 5, 5, std::to_string(COLS).c_str());
-    wresize(mymap["main"], 20, 20);
+    //TODO I still need to work on it
+    wresize(subWindow, 20, 20);
     break;
-
-  wmove(mymap["main"], yPos - (gameBoardHeight / 2), xPos - (gameBoardWidth / 2));
-  refresh();
-  wrefresh(mymap["main"]);
   }
 }
 
@@ -113,8 +108,6 @@ bool TickGame::computerMove() {
   return chooseBoardField(0, 0, 2);
 }
 
-
-void TickGame::virtualFunction() {}
 
 bool TickGame::isRunning() {
   return true;

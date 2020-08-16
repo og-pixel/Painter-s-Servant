@@ -24,10 +24,10 @@ public:
   void closeApplication(std::string message);
 
   //This function is made so Window Class cannot be instantiated
-  virtual void virtualFunction() = 0;
+  // virtual void virtualFunction() = 0;
 
   //TODO I think I will make this function
-  // virtual void navigation() = 0;
+  virtual void navigation() = 0;
 
   // Getters
   std::string getWindowName() const;

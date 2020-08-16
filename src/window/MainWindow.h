@@ -8,6 +8,8 @@ public:
   MainWindow();
   void virtualFunction();
 
+  void navigation() override;
+
 private:
   std::string menuList[3] = {"Tick Tack Toe", "Tetris", "Snake"};
   int menuSelected = 0;
