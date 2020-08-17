@@ -3,6 +3,7 @@
 #include "window/Window.h"
 #include "window/MainWindow.h"
 #include "window/TickGame.h"
+#include "window/SnakeGame.h"
 
 void initMainScreen() {
   initscr();
@@ -13,8 +14,13 @@ void initMainScreen() {
 int main() {
   initMainScreen();
 
-  TickGame* board = new TickGame();
+  // TickGame* board = new TickGame();
+  // board->startGame();
+  // board->close();
+
+  SnakeGame* board = new SnakeGame();
   board->startGame();
   board->close();
+
   return 0;
 }
