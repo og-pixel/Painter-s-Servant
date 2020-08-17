@@ -4,9 +4,6 @@
 #include "../stdafx.h"
 #include "TickGame.h"
 
-//The most basic form of the game, not even considering special
-// cases or anything like that.
-
 struct SnakeBody {
   int xPos;
   int yPos;
@@ -23,7 +20,6 @@ public:
 
   //Constructor
   SnakeGame();
-  SnakeGame(int gameWidth, int gameHeight);
 
   //Deconstructor
   ~SnakeGame();
@@ -38,6 +34,11 @@ private:
 
   //Variables
   struct SnakeBody snake[200];
+
+  bool isUp    = false;
+  bool isDown  = false;
+  bool isLeft  = true;
+  bool isRight = false;
 
 };
 

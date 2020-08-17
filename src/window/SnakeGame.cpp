@@ -5,118 +5,59 @@
 
 // Main Constructor, default parameters
 SnakeGame::SnakeGame(): TickGame(15, 30) {
+  snake[0].xPos = 1;
+  snake[0].yPos = 2;
 
-  for(int i = 0; i < sizeof(snake)/sizeof(snake[0]); i++) {
-    snake[i].xPos = 0;
-    snake[i].yPos = 0;
-  }
+  snake[1].xPos = 2;
+  snake[1].yPos = 2;
+
+  snake[2].xPos = 3;
+  snake[2].yPos = 2;
+
+  snake[3].xPos = 4;
+  snake[3].yPos = 2;
+
+  snake[4].xPos = 5;
+  snake[4].yPos = 2;
 
 }
 
-// Constructor
-// SnakeGame::SnakeGame(int gameWidth, int gameHeight): Window() {
-//   if(!isTerminalSizeSufficient())
-//     closeApplication("Terminal Size not Sufficient");
+bool SnakeGame::snakeMoveUp() {
+  if(!isUp && !isDown) {
+    isLeft  = false;
+    isRight = false;
 
-//   this->gameBoardWidth = gameWidth;
-//   this->gameBoardHeight = gameHeight;
+    isUp    = true;
+    return true;
+  } else return false;
+}
 
-//   boardMatrix.resize(gameHeight);
-//   for(int i = 0; i < gameHeight; i++)
-//     boardMatrix[i].resize(gameWidth);
-// }
+bool SnakeGame::snakeMoveDown() {
+  if(!isUp && !isDown) {
+    isLeft  = false;
+    isRight = false;
 
-// bool SnakeGame::chooseBoardField(int x, int y, int player) {
-//   if(x > gameBoardWidth || y >= gameBoardHeight) return false;
+    isDown  = true;
+    return true;
+  } else return false;
+}
 
-//   if(boardMatrix[y][x] == 0) {
-//     boardMatrix[y][x] = player;
-//     return true;
-//   }
-//   else return false;
-// }
+bool SnakeGame::snakeMoveLeft() {
+  if(!isLeft && !isRight) {
+    isUp   = false;
+    isDown = false;
 
-// bool SnakeGame::renderBoard() {
-//   if(!subWindow) {
-//     subWindow = derwin(mainWindow, getSubwinHeight(), getSubwinWidth(), (LINES/2) - (getSubwinHeight()/2) + 1, (COLS/2) - (getSubwinWidth()/2));
-//     box(subWindow, 0, 0);
-//   }
-//   for(int i = 0; i < gameBoardHeight; i++) {
-//     for(int j = 0; j < gameBoardWidth; j++) {
-//       mvwaddstr(subWindow, i + 2, j + 2, std::to_string(boardMatrix[i][j]).c_str());
-//     }
-//   }
-//   refresh();
-//   wrefresh(mainWindow);
-//   wrefresh(subWindow);
-//   return true;
-// }
+    isLeft = true;
+    return true;
+  } else return false;
+}
 
-// void SnakeGame::navigation() {
-//   wmove(subWindow, yPos, xPos);
-//   refresh();
-//   wrefresh(subWindow);
+bool SnakeGame::snakeMoveRight() {
+  if(!isLeft && !isRight) {
+    isUp    = false;
+    isDown  = false;
 
-//   int input = getch();
-//   switch(input) {
-//   case KEY_LEFT:
-//     if((xPos - 1) > 0) xPos--;
-//     break;
-//   case KEY_RIGHT:
-//     if((xPos + 1) < subWindow->_maxx) xPos++;
-//     break;
-//   case KEY_UP:
-//     if((yPos - 1) > 0) yPos--;
-//     break;
-//   case KEY_DOWN:
-//     if((yPos + 1) < subWindow->_maxy) yPos++;
-//     break;
-//   case 'j':
-//     playerMove(xPos - 2, yPos - 2);
-//     computerMove();
-//     break;
-//   case 'k':
-//     break;
-//   case 'l':
-//         break;
-//   case KEY_RESIZE:
-//     clear();
-//     mvwin(subWindow, (LINES/2) - (getSubwinHeight()/2) + 1,
-//           (COLS/2) - (getSubwinWidth()/2));
-
-//     wresize(subWindow, getSubwinHeight(), getSubwinWidth());
-//     // box(mainWindow, 0, 0);
-//     box(subWindow, 0, 0);
-//     break;
-//   }
-// }
-
-// bool SnakeGame::playerMove(int x, int y) {
-//   return chooseBoardField(x, y, 1);
-// }
-
-// bool SnakeGame::isTerminalSizeSufficient() {
-//   if((COLS >= gameBoardWidth + 20) &&
-//      LINES >= gameBoardHeight + 20) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
-
-// bool SnakeGame::computerMove() {
-//   //TODO Computer decision here
-//   return chooseBoardField(0, 0, 2);
-// }
-
-// bool SnakeGame::isRunning() {
-//   return true;
-// }
-
-// bool SnakeGame::startGame(){
-//   while(isRunning()) {
-//     renderBoard();
-//     navigation();
-//   }
-//   return true;
-// }
+    isRight = true;
+    return true;
+  } else return false;
+}
