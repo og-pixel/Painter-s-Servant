@@ -36,7 +36,7 @@ bool TickGame::renderBoard() {
   }
   for(int i = 0; i < gameBoardHeight; i++) {
     for(int j = 0; j < gameBoardWidth; j++) {
-      mvwaddstr(subWindow, i + 2, j + 2, std::to_string(boardMatrix[i][j]).c_str());
+      mvwaddstr(subWindow, i + 1, j + 1, std::to_string(boardMatrix[i][j]).c_str());
     }
   }
   refresh();
@@ -112,4 +112,8 @@ bool TickGame::startGame(){
     navigation();
   }
   return true;
+}
+
+std::vector<std::vector<int>> TickGame::getBoardMatrix() const {
+  return boardMatrix;
 }

@@ -15,7 +15,10 @@ public:
   TickGame(int gameWidth, int gameHeight);
 
   //Deconstructor
-  ~TickGame();
+  // ~TickGame();
+
+  //Getters
+  std::vector<std::vector<int>> getBoardMatrix() const;
 
   //Functions
   bool chooseBoardField(int x, int y, int player);
@@ -24,20 +27,21 @@ public:
   bool isRunning();
   void navigation() override;
 
+  int gameBoardWidth;
+  int gameBoardHeight;
+  std::vector<std::vector<int>> boardMatrix;
+
 private:
 
   //Variables
   bool playerTurn = true;
   int xPos = 1;
   int yPos = 2;
-  int gameBoardWidth;
-  int gameBoardHeight;
   std::string gameWindowName;
 
   //0 Empty
   //1 Player
   //2 AI
-  std::vector<std::vector<int>> boardMatrix;
 
   //Functions
   bool renderBoard();

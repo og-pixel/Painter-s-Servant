@@ -4,22 +4,13 @@
 #include "SnakeGame.h"
 
 // Main Constructor, default parameters
-SnakeGame::SnakeGame(): TickGame(15, 30) {
-  snake[0].xPos = 1;
-  snake[0].yPos = 2;
+SnakeGame::SnakeGame(): TickGame(8, 13) {
+  this->gameBoardHeight = getSubwinHeight() - 2;
+  this->gameBoardWidth = getSubwinWidth() - 2;
 
-  snake[1].xPos = 2;
-  snake[1].yPos = 2;
-
-  snake[2].xPos = 3;
-  snake[2].yPos = 2;
-
-  snake[3].xPos = 4;
-  snake[3].yPos = 2;
-
-  snake[4].xPos = 5;
-  snake[4].yPos = 2;
-
+  boardMatrix.resize(gameBoardHeight);
+  for(int i = 0; i < gameBoardHeight; i++)
+    boardMatrix[i].resize(gameBoardWidth);
 }
 
 bool SnakeGame::snakeMoveUp() {
@@ -60,4 +51,15 @@ bool SnakeGame::snakeMoveRight() {
     isRight = true;
     return true;
   } else return false;
+}
+
+//TODO work on it
+bool SnakeGame::moveSnake() {
+  if(isUp) {
+    // snake[0].yPos++;
+  }
+  return true;
+}
+
+bool SnakeGame::playerMove(int x, int y) {
 }

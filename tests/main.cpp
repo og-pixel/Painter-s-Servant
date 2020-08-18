@@ -16,8 +16,8 @@ TEST_CASE("Create two windows and see if they are stored correctly in the static
   //TODO Remember about operator overloading "=="
   // so I can make a comparison
 
-  Window* mainWindow = new MainWindow();
-  Window* tickTackToe = new MainWindow();
+  // Window* mainWindow = new MainWindow();
+  // Window* tickTackToe = new MainWindow();
 
 
   // REQUIRE();

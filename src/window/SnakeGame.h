@@ -4,15 +4,16 @@
 #include "../stdafx.h"
 #include "TickGame.h"
 
-struct SnakeBody {
-  int xPos;
-  int yPos;
-};
+// struct SnakeBody {
+//   int xPos;
+//   int yPos;
+// };
 
-struct Point {
-  int x;
-  int y;
-};
+// struct Point {
+//   int x;
+//   int y;
+// }
+  // ;
 
 class SnakeGame: public TickGame {
 
@@ -22,7 +23,7 @@ public:
   SnakeGame();
 
   //Deconstructor
-  ~SnakeGame();
+  // ~SnakeGame();
 
   //Functions
   bool snakeMoveUp();
@@ -30,10 +31,14 @@ public:
   bool snakeMoveLeft();
   bool snakeMoveRight();
 
+  bool moveSnake();
+
+  bool playerMove(int x, int y);
+
 private:
 
   //Variables
-  struct SnakeBody snake[200];
+  // struct SnakeBody snake[200];
 
   bool isUp    = false;
   bool isDown  = false;
