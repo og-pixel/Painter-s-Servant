@@ -11,6 +11,7 @@ SnakeGame::SnakeGame(): TickGame(8, 13) {
   boardMatrix.resize(gameBoardHeight);
   for(int i = 0; i < gameBoardHeight; i++)
     boardMatrix[i].resize(gameBoardWidth);
+  createSnake();
 }
 
 bool SnakeGame::snakeMoveUp() {
@@ -61,5 +62,28 @@ bool SnakeGame::moveSnake() {
   return true;
 }
 
+bool SnakeGame::createSnake() {
+
+  for(int i = 0; i < 5; i++) {
+    snakeBody x = {i, 2};
+    snake.push_back(x);
+  }
+
+  auto it = snake.begin();
+  for(auto i = 0; i < snake.size(); i++) {
+    std::advance(it, 1);
+  }
+
+  return true;
+}
+
+bool SnakeGame::eatFood() {
+  return true;
+}
+
 bool SnakeGame::playerMove(int x, int y) {
+}
+
+bool SnakeGame::renderBoard() {
+  return true;
 }

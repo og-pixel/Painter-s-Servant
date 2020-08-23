@@ -14,10 +14,6 @@ void initMainScreen() {
 int main() {
   initMainScreen();
 
-  // TickGame* board = new TickGame();
-  // board->startGame();
-  // board->close();
-
   SnakeGame* board = new SnakeGame();
   board->startGame();
   board->close();

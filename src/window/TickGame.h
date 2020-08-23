@@ -44,7 +44,7 @@ private:
   //2 AI
 
   //Functions
-  bool renderBoard();
+  virtual bool renderBoard();
   bool computerMove();
   bool playerMove(int x, int y);
   bool isTerminalSizeSufficient();

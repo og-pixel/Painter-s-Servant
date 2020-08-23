@@ -40,8 +40,8 @@ private:
 
   std::string mainWindowName = "main";
 
-  int subwinWidth = 82;
-  int subwinHeight = 16;
+  int subwinWidth = 62;
+  int subwinHeight = 20;
 
   //Functions
 };

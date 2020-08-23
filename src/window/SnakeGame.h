@@ -4,10 +4,10 @@
 #include "../stdafx.h"
 #include "TickGame.h"
 
-// struct SnakeBody {
-//   int xPos;
-//   int yPos;
-// };
+struct snakeBody {
+  int xPos;
+  int yPos;
+};
 
 // struct Point {
 //   int x;
@@ -32,19 +32,22 @@ public:
   bool snakeMoveRight();
 
   bool moveSnake();
+  bool createSnake();
+  bool eatFood();
 
   bool playerMove(int x, int y);
 
 private:
 
   //Variables
-  // struct SnakeBody snake[200];
+  std::list<snakeBody> snake;
 
   bool isUp    = false;
   bool isDown  = false;
   bool isLeft  = true;
   bool isRight = false;
 
+  bool renderBoard() override;
 };
 
 #endif //GOBLINGUIDE_SNAKEGAME_H
