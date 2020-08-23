@@ -65,7 +65,7 @@ bool SnakeGame::moveSnake() {
 bool SnakeGame::createSnake() {
 
   for(int i = 0; i < 5; i++) {
-    snakeBody x = {i, 2};
+    snakeBody x = {3, i + 2};
     snake.push_back(x);
   }
 
