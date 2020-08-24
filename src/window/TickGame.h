@@ -45,8 +45,8 @@ private:
 
   //Functions
   virtual bool renderBoard();
-  bool computerMove();
-  bool playerMove(int x, int y);
+  virtual bool computerMove();
+  virtual bool playerMove(int x, int y);
   bool isTerminalSizeSufficient();
 };
 
