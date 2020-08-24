@@ -3,6 +3,7 @@
 
 #include "../stdafx.h"
 #include "Window.h"
+#include "../tiles/BasicTile.h"
 
 //The most basic form of the game, not even considering special
 // cases or anything like that.

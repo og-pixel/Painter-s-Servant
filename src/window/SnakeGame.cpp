@@ -2,6 +2,8 @@
 // Created by og_pixel
 //
 #include "SnakeGame.h"
+#include "../tiles/BasicTile.h"
+#include "../tiles/SnakeTile.h"
 
 // Main Constructor, default parameters
 SnakeGame::SnakeGame(): TickGame(8, 13) {
@@ -11,7 +13,10 @@ SnakeGame::SnakeGame(): TickGame(8, 13) {
   boardMatrix.resize(gameBoardHeight);
   for(int i = 0; i < gameBoardHeight; i++)
     boardMatrix[i].resize(gameBoardWidth);
+
   createSnake();
+  //TODO delete
+  BasicTile* tile = new SnakeTile();
 }
 
 bool SnakeGame::snakeMoveUp() {
@@ -93,7 +98,8 @@ bool SnakeGame::renderBoard() {
 
   for(int i = 0; i < gameBoardHeight; i++) {
     for(int j = 0; j < gameBoardWidth; j++) {
-      mvwaddstr(subWindow, i + 1, j + 1, std::to_string(boardMatrix[i][j]).c_str());
+      // char x = boardMatrix[i][j].getTileInASCII();
+      // mvwaddstr(subWindow, i + 1, j + 1, x);
     }
   }
 

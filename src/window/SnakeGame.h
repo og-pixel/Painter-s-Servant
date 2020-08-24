@@ -9,12 +9,6 @@ struct snakeBody {
   int yPos;
 };
 
-// struct Point {
-//   int x;
-//   int y;
-// }
-  // ;
-
 class SnakeGame: public TickGame {
 
 public:
