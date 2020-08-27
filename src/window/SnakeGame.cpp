@@ -96,10 +96,10 @@ bool SnakeGame::renderBoard() {
     box(subWindow, 0, 0);
   }
 
+  //TODO this is a quick and dirty render
   for(int i = 0; i < gameBoardHeight; i++) {
     for(int j = 0; j < gameBoardWidth; j++) {
-      // char x = boardMatrix[i][j].getTileInASCII();
-      // mvwaddstr(subWindow, i + 1, j + 1, x);
+      mvwaddstr(subWindow, i + 1, j + 1, std::to_string(boardMatrix[i][j]).c_str());
     }
   }
 
