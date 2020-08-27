@@ -114,6 +114,6 @@ bool TickGame::startGame(){
   return true;
 }
 
-std::vector<std::vector<int>> TickGame::getBoardMatrix() const {
+std::vector<std::vector<char>> TickGame::getBoardMatrix() const {
   return boardMatrix;
 }

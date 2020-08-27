@@ -19,7 +19,7 @@ public:
   // ~TickGame();
 
   //Getters
-  std::vector<std::vector<int>> getBoardMatrix() const;
+  std::vector<std::vector<char>> getBoardMatrix() const;
 
   //Functions
   bool chooseBoardField(int x, int y, int player);
@@ -30,7 +30,7 @@ public:
 
   int gameBoardWidth;
   int gameBoardHeight;
-  std::vector<std::vector<int>> boardMatrix;
+  std::vector<std::vector<char>> boardMatrix;
 
 private:
 

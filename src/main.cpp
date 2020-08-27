@@ -4,7 +4,6 @@
 #include "window/MainWindow.h"
 #include "window/TickGame.h"
 #include "window/SnakeGame.h"
-#include "board/BoardTile.h"
 
 void initMainScreen() {
   initscr();
