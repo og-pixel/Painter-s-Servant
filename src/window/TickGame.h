@@ -27,6 +27,7 @@ public:
   bool startGame();
   bool isRunning();
   void navigation() override;
+  bool renderBoard() override;
 
   int gameBoardWidth;
   int gameBoardHeight;
@@ -45,7 +46,6 @@ private:
   //2 AI
 
   //Functions
-  virtual bool renderBoard();
   virtual bool computerMove();
   virtual bool playerMove(int x, int y);
   bool isTerminalSizeSufficient();

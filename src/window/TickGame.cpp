@@ -39,9 +39,9 @@ bool TickGame::renderBoard() {
       mvwaddstr(subWindow, i + 1, j + 1, std::to_string(boardMatrix[i][j]).c_str());
     }
   }
-  refresh();
-  wrefresh(mainWindow);
-  wrefresh(subWindow);
+  // refresh();
+  // wrefresh(mainWindow);
+  // wrefresh(subWindow);
   return true;
 }
 
@@ -108,7 +108,7 @@ bool TickGame::isRunning() {
 
 bool TickGame::startGame(){
   while(isRunning()) {
-    renderBoard();
+    drawBoard();
     navigation();
   }
   return true;

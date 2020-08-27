@@ -45,3 +45,17 @@ int Window::getSubwinWidth() const {
 int Window::getSubwinHeight() const {
   return subwinHeight;
 }
+
+
+bool Window::refreshWindows() {
+  refresh();
+  wrefresh(mainWindow);
+  wrefresh(subWindow);
+  return true;
+}
+
+bool Window::drawBoard() {
+  renderBoard();
+  refreshWindows();
+  return true;
+}

@@ -22,7 +22,10 @@ public:
   bool checkSize();
   bool isMainWindow();
   void closeApplication(std::string message);
+  bool drawBoard();
+
   virtual void navigation() = 0;
+  virtual bool renderBoard() = 0;
 
   // Getters
   std::string getWindowName() const;
@@ -44,6 +47,7 @@ private:
   int subwinHeight = 20;
 
   //Functions
+  bool refreshWindows();
 };
 
 #endif //GOBLINGUIDE_WINDOW_H
