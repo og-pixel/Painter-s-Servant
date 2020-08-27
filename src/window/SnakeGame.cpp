@@ -15,8 +15,6 @@ SnakeGame::SnakeGame(): TickGame(8, 13) {
     boardMatrix[i].resize(gameBoardWidth);
 
   createSnake();
-  //TODO delete
-  BasicTile* tile = new SnakeTile();
 }
 
 bool SnakeGame::snakeMoveUp() {
