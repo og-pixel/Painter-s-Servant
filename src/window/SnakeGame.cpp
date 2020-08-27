@@ -89,29 +89,15 @@ bool SnakeGame::playerMove(int x, int y) {
 
 //TODO over the top but it works atm
 bool SnakeGame::renderBoard() {
-  // if(!subWindow) {
-  //   subWindow = derwin(mainWindow, getSubwinHeight(), getSubwinWidth(), (LINES/2) - (getSubwinHeight()/2) + 1, (COLS/2) - (getSubwinWidth()/2));
-  //   box(subWindow, 0, 0);
-  // }
-
-  //TODO this is a quick and dirty render
-  // for(int i = 0; i < gameBoardHeight; i++) {
-  //   for(int j = 0; j < gameBoardWidth; j++) {
-  //     mvwaddstr(subWindow, i + 1, j + 1, std::to_string(boardMatrix[i][j]).c_str());
-  //   }
-  // }
-
+  //Call parent's function to render basic board
   TickGame::renderBoard();
 
+  //Add Snake on top of that
   auto it = snake.begin();
   for(auto i = 0; i < snake.size(); i++) {
     mvwaddstr(subWindow, it->xPos + 1, it->yPos + 1, "S");
     std::advance(it, 1);
   }
-
-  // refresh();
-  // wrefresh(mainWindow);
-  // wrefresh(subWindow);
 
   return true;
 }

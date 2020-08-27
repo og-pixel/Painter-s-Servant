@@ -36,12 +36,11 @@ bool TickGame::renderBoard() {
   }
   for(int i = 0; i < gameBoardHeight; i++) {
     for(int j = 0; j < gameBoardWidth; j++) {
-      mvwaddstr(subWindow, i + 1, j + 1, std::to_string(boardMatrix[i][j]).c_str());
+      //TODO fix temporary fix
+      std::string a = " ";
+      mvwaddstr(subWindow, i + 1, j + 1, a.c_str());
     }
   }
-  // refresh();
-  // wrefresh(mainWindow);
-  // wrefresh(subWindow);
   return true;
 }
 
