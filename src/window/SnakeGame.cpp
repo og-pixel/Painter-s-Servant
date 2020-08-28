@@ -60,8 +60,30 @@ bool SnakeGame::snakeMoveRight() {
 //TODO work on it
 bool SnakeGame::moveSnake() {
   if(isUp) {
-    // snake[0].yPos++;
+    //TODO make snake move
+    auto snakeBack = snake.back();
+    auto snakeFront = snake.front();
+
+    snakeBack.xPos = snakeFront.xPos;
+    snakeBack.yPos = snakeFront.yPos - 1;
+
+    snake.pop_back();
+    snake.push_front(snakeBack);
+
+    return true;
+  } else if (isDown) {
+
+    return true;
+  } else if (isLeft) {
+    
+    return true;
+  } else if (isRight) {
+    
+    return true;
+  } else {
+    return false;
   }
+
   return true;
 }
 
@@ -98,6 +120,10 @@ bool SnakeGame::renderBoard() {
     mvwaddstr(subWindow, it->xPos + 1, it->yPos + 1, "S");
     std::advance(it, 1);
   }
+
+  // auto snek = snake.begin();
+  // mvwaddstr(mainWindow, 5, 5, std::to_string(snek->xPos));
+  moveSnake();
 
   return true;
 }

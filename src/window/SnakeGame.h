@@ -24,21 +24,23 @@ public:
   bool snakeMoveDown();
   bool snakeMoveLeft();
   bool snakeMoveRight();
-
   bool moveSnake();
+
   bool createSnake();
   bool eatFood();
 
   bool playerMove(int x, int y);
 
+
 private:
 
   //Variables
   std::list<snakeBody> snake;
+  int gameSpeed = 100;
 
-  bool isUp    = false;
+  bool isUp    = true;
   bool isDown  = false;
-  bool isLeft  = true;
+  bool isLeft  = false;
   bool isRight = false;
 
   bool renderBoard() override;
