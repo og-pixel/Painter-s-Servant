@@ -9,6 +9,7 @@ void initMainScreen() {
   initscr();
   keypad(stdscr, true);
   noecho();
+  nodelay(stdscr, true);
 }
 
 int main() {

@@ -44,6 +44,7 @@ private:
   bool isRight = false;
 
   bool renderBoard() override;
+  void navigation() override;
 };
 
 #endif //GOBLINGUIDE_SNAKEGAME_H

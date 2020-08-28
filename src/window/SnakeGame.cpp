@@ -7,6 +7,7 @@
 
 // Main Constructor, default parameters
 SnakeGame::SnakeGame(): TickGame(8, 13) {
+  nodelay(subWindow, true);
   this->gameBoardHeight = getSubwinHeight() - 2;
   this->gameBoardWidth = getSubwinWidth() - 2;
 
@@ -72,17 +73,40 @@ bool SnakeGame::moveSnake() {
 
     return true;
   } else if (isDown) {
+    auto snakeBack = snake.back();
+    auto snakeFront = snake.front();
+
+    snakeBack.xPos = snakeFront.xPos;
+    snakeBack.yPos = snakeFront.yPos + 1;
+
+    snake.pop_back();
+    snake.push_front(snakeBack);
 
     return true;
   } else if (isLeft) {
-    
+    auto snakeBack = snake.back();
+    auto snakeFront = snake.front();
+
+    snakeBack.xPos = snakeFront.xPos - 1;
+    snakeBack.yPos = snakeFront.yPos;
+
+    snake.pop_back();
+    snake.push_front(snakeBack);
+
     return true;
   } else if (isRight) {
-    
+    auto snakeBack = snake.back();
+    auto snakeFront = snake.front();
+
+    snakeBack.xPos = snakeFront.xPos + 1;
+    snakeBack.yPos = snakeFront.yPos;
+
+    snake.pop_back();
+    snake.push_front(snakeBack);
+
     return true;
-  } else {
+  } else
     return false;
-  }
 
   return true;
 }
@@ -117,7 +141,7 @@ bool SnakeGame::renderBoard() {
   //Add Snake on top of that
   auto it = snake.begin();
   for(auto i = 0; i < snake.size(); i++) {
-    mvwaddstr(subWindow, it->xPos + 1, it->yPos + 1, "S");
+    mvwaddstr(subWindow, it->yPos + 1, it->xPos + 1, "S");
     std::advance(it, 1);
   }
 
@@ -126,4 +150,46 @@ bool SnakeGame::renderBoard() {
   moveSnake();
 
   return true;
+}
+
+void SnakeGame::navigation() {
+  // wmove(subWindow, 3, 3);
+  refresh();
+  wrefresh(subWindow);
+
+  int input = getch();
+  switch(input) {
+  case KEY_LEFT:
+    snakeMoveLeft();
+    break;
+  case KEY_RIGHT:
+    snakeMoveRight();
+    break;
+  case KEY_UP:
+    snakeMoveUp();
+    break;
+  case KEY_DOWN:
+    snakeMoveDown();
+    break;
+  case 'j':
+    // playerMove(xPos - 2, yPos - 2);
+    // computerMove();
+    break;
+  case 'k':
+    break;
+  case 'l':
+    break;
+  case ERR:
+    usleep(1000000);
+    break;
+  case KEY_RESIZE:
+    clear();
+    mvwin(subWindow, (LINES/2) - (getSubwinHeight()/2) + 1,
+          (COLS/2) - (getSubwinWidth()/2));
+
+    wresize(subWindow, getSubwinHeight(), getSubwinWidth());
+    box(subWindow, 0, 0);
+    break;
+  }
+
 }
